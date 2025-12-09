@@ -8,7 +8,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import StaticMap from '@/components/StaticMap';
+import InteractiveLocationMap from '@/components/InteractiveLocationMap';
 import {
   Leaf,
   MapPin,
@@ -590,7 +590,7 @@ export default function HomePage() {
 
             <AnimatedElement delay={200}>
               <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px]">
-                <StaticMap />
+                <InteractiveLocationMap />
               </div>
             </AnimatedElement>
           </div>
