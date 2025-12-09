@@ -267,24 +267,54 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2️⃣ KEY HIGHLIGHTS SECTION (4 GOLD CARDS) */}
+      {/* 2️⃣ KEY HIGHLIGHTS SECTION (LUXURY IMAGE CARDS WITH ANIMATED OVERLAYS) */}
       <section id="highlights" className="py-24 md:py-32 bg-white relative">
         <div className="container mx-auto px-6 max-w-[120rem]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <AnimatedElement>
+            <div className="text-center mb-16">
+              <h2 className="font-heading text-5xl md:text-6xl font-bold text-primary mb-4">43 Acres Township</h2>
+              <p className="text-lg text-foreground/70 max-w-2xl mx-auto">Expansive integrated living with premium amenities and thoughtfully designed spaces</p>
+            </div>
+          </AnimatedElement>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {keyHighlights.length > 0 ? (
               keyHighlights.map((highlight, index) => (
                 <AnimatedElement key={highlight._id} delay={index * 100}>
-                  <div className="group h-full p-8 bg-white border border-primary/10 hover:border-primary/60 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 rounded-xl flex flex-col items-center text-center relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-light-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="mb-6 p-4 rounded-full bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300">
-                      {highlight.highlightIcon ? (
-                        <Image src={highlight.highlightIcon} alt={highlight.highlightTitle || ''} className="w-10 h-10 object-contain" />
-                      ) : (
-                        <Star className="w-10 h-10 text-primary" />
-                      )}
+                  <div className="group relative h-80 rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 cursor-pointer">
+                    {/* Background Image */}
+                    {highlight.highlightIcon ? (
+                      <Image 
+                        src={highlight.highlightIcon} 
+                        alt={highlight.highlightTitle || ''} 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5" />
+                    )}
+                    
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 group-hover:via-black/50 transition-all duration-500" />
+                    
+                    {/* Content Overlay */}
+                    <div className="absolute inset-0 flex flex-col justify-end p-8">
+                      <motion.h3 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        className="font-heading text-3xl md:text-4xl font-bold text-white mb-3"
+                      >
+                        {highlight.highlightTitle}
+                      </motion.h3>
+                      <motion.p 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="text-white/90 text-base leading-relaxed"
+                      >
+                        {highlight.shortDescription}
+                      </motion.p>
                     </div>
-                    <h3 className="font-heading text-2xl font-bold text-foreground mb-3 relative z-10">{highlight.highlightTitle}</h3>
-                    <p className="text-sm text-foreground/60 relative z-10">{highlight.shortDescription}</p>
                   </div>
                 </AnimatedElement>
               ))
