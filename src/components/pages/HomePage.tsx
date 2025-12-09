@@ -8,7 +8,6 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import StaticMap from '@/components/StaticMap';
 import {
   Leaf,
   MapPin,
@@ -589,11 +588,23 @@ export default function HomePage() {
             </AnimatedElement>
 
             <AnimatedElement delay={200}>
-              <div className="relative group h-full">
+              <div className="relative group">
                 <div className="absolute inset-0 bg-gold-accent/20 blur-3xl rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-700" />
-                
-                {/* Static Map with Gold Pointers */}
-                <StaticMap />
+                <Image
+                  src={locationAdvantages?.mapIllustrationImage || 'https://static.wixstatic.com/media/cef78c_9e93d53231df40feabb3d7106b15637e~mv2.png?originWidth=896&originHeight=576'}
+                  alt="Location Map"
+                  className="w-full h-auto rounded-2xl shadow-2xl border-4 border-white relative z-10"
+                />
+                {/* Animated Pin */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+                  <div className="relative">
+                    <div className="w-4 h-4 bg-primary rounded-full animate-ping absolute inset-0" />
+                    <div className="w-4 h-4 bg-primary rounded-full relative border-2 border-white shadow-lg" />
+                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-white px-3 py-1 rounded shadow-lg whitespace-nowrap text-xs font-bold text-primary">
+                      Evora Estate
+                    </div>
+                  </div>
+                </div>
               </div>
             </AnimatedElement>
           </div>
