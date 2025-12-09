@@ -28,7 +28,7 @@ const Map3D: React.FC = () => {
   const markersRef = useRef<Map<string, THREE.Object3D>>(new Map());
   const cameraTargetRef = useRef(new THREE.Vector3(0, 0, 8));
 
-  // Points of Interest around Evora Estate - Golden Luxury Palette
+  // Points of Interest - Modern Minimalist Color Palette
   const pois: POI[] = [
     {
       id: 'school-1',
@@ -38,8 +38,8 @@ const Map3D: React.FC = () => {
       description: 'Premium educational institution',
       distance: '2.5 km',
       icon: <GraduationCap className="w-4 h-4" />,
-      color: '#D4AF37',
-      hexColor: 0xD4AF37,
+      color: '#3B82F6', // Modern Blue
+      hexColor: 0x3B82F6,
     },
     {
       id: 'hospital-1',
@@ -49,8 +49,8 @@ const Map3D: React.FC = () => {
       description: 'Multi-specialty hospital',
       distance: '1.8 km',
       icon: <Heart className="w-4 h-4" />,
-      color: '#C9A961',
-      hexColor: 0xC9A961,
+      color: '#EF4444', // Clean Red
+      hexColor: 0xEF4444,
     },
     {
       id: 'mall-1',
@@ -60,8 +60,8 @@ const Map3D: React.FC = () => {
       description: 'Shopping & entertainment hub',
       distance: '3.2 km',
       icon: <ShoppingCart className="w-4 h-4" />,
-      color: '#E6C200',
-      hexColor: 0xE6C200,
+      color: '#F59E0B', // Warm Amber
+      hexColor: 0xF59E0B,
     },
     {
       id: 'park-1',
@@ -71,8 +71,8 @@ const Map3D: React.FC = () => {
       description: 'Recreational green space',
       distance: '1.5 km',
       icon: <MapPin className="w-4 h-4" />,
-      color: '#B8956A',
-      hexColor: 0xB8956A,
+      color: '#10B981', // Fresh Green
+      hexColor: 0x10B981,
     },
     {
       id: 'metro-1',
@@ -82,8 +82,8 @@ const Map3D: React.FC = () => {
       description: 'Public transport hub',
       distance: '2.1 km',
       icon: <Zap className="w-4 h-4" />,
-      color: '#D4A574',
-      hexColor: 0xD4A574,
+      color: '#8B5CF6', // Modern Purple
+      hexColor: 0x8B5CF6,
     },
     {
       id: 'market-1',
@@ -93,18 +93,18 @@ const Map3D: React.FC = () => {
       description: 'Daily essentials & groceries',
       distance: '0.8 km',
       icon: <Building2 className="w-4 h-4" />,
-      color: '#C9B037',
-      hexColor: 0xC9B037,
+      color: '#06B6D4', // Cyan
+      hexColor: 0x06B6D4,
     },
   ];
 
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Scene Setup - Golden Luxury Theme
+    // Scene Setup - Modern Minimalist Theme
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xFAF6F1); // Warm cream/ivory
-    scene.fog = new THREE.Fog(0xFAF6F1, 30, 60);
+    scene.background = new THREE.Color(0xFFFFFF); // Clean white background
+    scene.fog = new THREE.Fog(0xFFFFFF, 30, 60);
     sceneRef.current = scene;
 
     // Camera Setup
@@ -124,16 +124,16 @@ const Map3D: React.FC = () => {
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFShadowMap;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.1;
+    renderer.toneMappingExposure = 1;
     containerRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
-    // Golden Lighting Setup
-    const ambientLight = new THREE.AmbientLight(0xFFE4B5, 0.5); // Moccasin warm light
+    // Modern Minimalist Lighting
+    const ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.6); // Neutral white light
     scene.add(ambientLight);
 
-    // Key Light - Warm Gold
-    const keyLight = new THREE.DirectionalLight(0xFFF8DC, 1.2); // Cornsilk
+    // Key Light - Soft, directional
+    const keyLight = new THREE.DirectionalLight(0xFFFFFF, 0.8);
     keyLight.position.set(8, 12, 8);
     keyLight.castShadow = true;
     keyLight.shadow.mapSize.width = 2048;
@@ -146,34 +146,29 @@ const Map3D: React.FC = () => {
     keyLight.shadow.bias = -0.0001;
     scene.add(keyLight);
 
-    // Fill Light (Warm Gold)
-    const fillLight = new THREE.DirectionalLight(0xFFD700, 0.4); // Gold
+    // Fill Light - Subtle
+    const fillLight = new THREE.DirectionalLight(0xF0F0F0, 0.3);
     fillLight.position.set(-8, 6, -8);
     scene.add(fillLight);
 
-    // Back Light (Soft Gold)
-    const rimLight = new THREE.DirectionalLight(0xF0E68C, 0.3); // Khaki
-    rimLight.position.set(0, 8, -10);
-    scene.add(rimLight);
-
-    // Ground Plane - Elegant Cream/Gold Material
+    // Ground Plane - Minimalist
     const groundGeometry = new THREE.PlaneGeometry(16, 16);
     const groundMaterial = new THREE.MeshStandardMaterial({
-      color: 0xF5F1E8,
-      metalness: 0.2,
-      roughness: 0.6,
-      envMapIntensity: 0.4,
+      color: 0xF9FAFB, // Very light gray
+      metalness: 0.05,
+      roughness: 0.9,
+      envMapIntensity: 0.2,
     });
     const ground = new THREE.Mesh(groundGeometry, groundMaterial);
     ground.receiveShadow = true;
     ground.position.z = -0.1;
     scene.add(ground);
 
-    // Elegant Gold Grid Pattern
-    const gridHelper = new THREE.GridHelper(16, 16, 0xD4AF37, 0xE6C200);
+    // Subtle Grid Pattern
+    const gridHelper = new THREE.GridHelper(16, 16, 0xE5E7EB, 0xF3F4F6);
     gridHelper.position.z = 0.01;
     gridHelper.material.transparent = true;
-    gridHelper.material.opacity = 0.25;
+    gridHelper.material.opacity = 0.4;
     scene.add(gridHelper);
 
     // Marker Group
@@ -181,17 +176,17 @@ const Map3D: React.FC = () => {
     scene.add(markerGroup);
     markerGroupRef.current = markerGroup;
 
-    // Create Golden Luxury Markers for POIs
+    // Create Modern Minimalist Markers for POIs
     pois.forEach((poi) => {
-      // Main Marker Sphere - Premium Gold Material
-      const markerGeometry = new THREE.SphereGeometry(0.35, 64, 64);
+      // Main Marker Sphere - Clean, minimal design
+      const markerGeometry = new THREE.SphereGeometry(0.3, 32, 32);
       const markerMaterial = new THREE.MeshStandardMaterial({
         color: poi.hexColor,
-        metalness: 0.85,
-        roughness: 0.15,
+        metalness: 0.3,
+        roughness: 0.6,
         emissive: poi.hexColor,
-        emissiveIntensity: 0.7,
-        envMapIntensity: 1.1,
+        emissiveIntensity: 0.3,
+        envMapIntensity: 0.5,
       });
       const marker = new THREE.Mesh(markerGeometry, markerMaterial);
       marker.position.set(...poi.position);
@@ -199,95 +194,85 @@ const Map3D: React.FC = () => {
       marker.receiveShadow = true;
       marker.userData = { poiId: poi.id };
 
-      // Elegant Outer Ring - Gold
-      const ringGeometry = new THREE.TorusGeometry(0.6, 0.06, 32, 200);
+      // Subtle Outer Ring - Minimal design
+      const ringGeometry = new THREE.TorusGeometry(0.5, 0.04, 16, 100);
       const ringMaterial = new THREE.MeshStandardMaterial({
         color: poi.hexColor,
-        metalness: 0.92,
-        roughness: 0.08,
+        metalness: 0.2,
+        roughness: 0.7,
         emissive: poi.hexColor,
-        emissiveIntensity: 0.85,
+        emissiveIntensity: 0.2,
       });
       const ring = new THREE.Mesh(ringGeometry, ringMaterial);
       ring.position.copy(marker.position);
       ring.rotation.x = Math.PI / 3.5;
       ring.castShadow = true;
 
-      // Soft Halo Effect - Subtle Gold Glow
-      const haloGeometry = new THREE.TorusGeometry(0.9, 0.03, 32, 200);
-      const haloMaterial = new THREE.MeshStandardMaterial({
+      // Soft Glow Ring - Very subtle
+      const glowGeometry = new THREE.TorusGeometry(0.7, 0.02, 16, 100);
+      const glowMaterial = new THREE.MeshStandardMaterial({
         color: poi.hexColor,
-        metalness: 0.75,
-        roughness: 0.25,
+        metalness: 0.1,
+        roughness: 0.8,
         emissive: poi.hexColor,
-        emissiveIntensity: 0.5,
+        emissiveIntensity: 0.15,
         transparent: true,
-        opacity: 0.5,
+        opacity: 0.4,
       });
-      const halo = new THREE.Mesh(haloGeometry, haloMaterial);
-      halo.position.copy(marker.position);
-      halo.rotation.x = Math.PI / 2.5;
+      const glow = new THREE.Mesh(glowGeometry, glowMaterial);
+      glow.position.copy(marker.position);
+      glow.rotation.x = Math.PI / 2.5;
 
       // Container
       const container = new THREE.Group();
       container.add(marker);
       container.add(ring);
-      container.add(halo);
+      container.add(glow);
       container.userData = { poiId: poi.id };
 
       markerGroup.add(container);
       markersRef.current.set(poi.id, container);
     });
 
-    // Evora Estate Center Marker - Premium Bright Gold
-    const centerGeometry = new THREE.SphereGeometry(0.5, 64, 64);
+    // Center Marker - Minimalist design
+    const centerGeometry = new THREE.SphereGeometry(0.4, 32, 32);
     const centerMaterial = new THREE.MeshStandardMaterial({
-      color: 0xFFD700,
-      metalness: 0.9,
-      roughness: 0.1,
-      emissive: 0xFFD700,
-      emissiveIntensity: 0.9,
-      envMapIntensity: 1.3,
+      color: 0x1F2937, // Dark gray/charcoal
+      metalness: 0.2,
+      roughness: 0.7,
+      emissive: 0x1F2937,
+      emissiveIntensity: 0.2,
+      envMapIntensity: 0.4,
     });
     const centerMarker = new THREE.Mesh(centerGeometry, centerMaterial);
     centerMarker.position.set(0, 0, 0);
     centerMarker.castShadow = true;
     centerMarker.receiveShadow = true;
 
-    // Center Rings (Multiple for luxury effect)
-    const createCenterRing = (radius: number, color: number, intensity: number) => {
-      const ringGeometry = new THREE.TorusGeometry(radius, 0.08, 32, 200);
-      const ringMaterial = new THREE.MeshStandardMaterial({
-        color: color,
-        metalness: 0.95,
-        roughness: 0.05,
-        emissive: color,
-        emissiveIntensity: intensity,
-      });
-      const ring = new THREE.Mesh(ringGeometry, ringMaterial);
-      ring.position.copy(centerMarker.position);
-      ring.castShadow = true;
-      return ring;
-    };
-
-    const centerRing1 = createCenterRing(0.8, 0xFFD700, 0.95);
-    centerRing1.rotation.x = Math.PI / 3;
-
-    const centerRing2 = createCenterRing(1.1, 0xD4AF37, 0.7);
-    centerRing2.rotation.x = Math.PI / 2.5;
-    centerRing2.rotation.z = Math.PI / 4;
+    // Center Ring - Single, clean ring
+    const centerRingGeometry = new THREE.TorusGeometry(0.7, 0.05, 16, 100);
+    const centerRingMaterial = new THREE.MeshStandardMaterial({
+      color: 0x1F2937,
+      metalness: 0.15,
+      roughness: 0.75,
+      emissive: 0x1F2937,
+      emissiveIntensity: 0.25,
+    });
+    const centerRing = new THREE.Mesh(centerRingGeometry, centerRingMaterial);
+    centerRing.position.copy(centerMarker.position);
+    centerRing.rotation.x = Math.PI / 3;
+    centerRing.castShadow = true;
 
     const centerContainer = new THREE.Group();
     centerContainer.add(centerMarker);
-    centerContainer.add(centerRing1);
-    centerContainer.add(centerRing2);
+    centerContainer.add(centerRing);
     markerGroup.add(centerContainer);
 
-    // Elegant Gold Connection Lines
+    // Subtle Connection Lines
     const linesMaterial = new THREE.LineBasicMaterial({
-      color: 0xD4AF37,
+      color: 0xD1D5DB, // Light gray
       transparent: true,
-      opacity: 0.3,
+      opacity: 0.2,
       linewidth: 1,
     });
 
@@ -316,14 +301,14 @@ const Map3D: React.FC = () => {
       });
       setHoveredPOI(null);
 
-      // Highlight hovered marker with elegant scale
+      // Highlight hovered marker with subtle scale
       if (intersects.length > 0) {
         let parent = intersects[0].object.parent;
         while (parent && !parent.userData.poiId) {
           parent = parent.parent;
         }
         if (parent && parent.userData.poiId) {
-          parent.scale.set(1.5, 1.5, 1.5);
+          parent.scale.set(1.3, 1.3, 1.3); // Subtle 30% scale
           setHoveredPOI(parent.userData.poiId);
           
           // Smooth camera movement towards marker
@@ -383,36 +368,36 @@ const Map3D: React.FC = () => {
       camera.position.lerp(cameraTargetRef.current, 0.08);
       camera.lookAt(0, 0, 0);
 
-      // Gentle rotation of marker group
+      // Very subtle rotation of marker group
       if (markerGroup) {
-        markerGroup.rotation.z += 0.0001;
+        markerGroup.rotation.z += 0.00005;
       }
 
-      // Elegant floating animation for markers
+      // Minimal floating animation for markers
       markerGroup.children.forEach((child) => {
         if (child instanceof THREE.Group && child !== centerContainer) {
           const time = Date.now() * 0.001;
           
-          // Subtle floating animation
+          // Very subtle floating animation
           const originalY = pois.find(p => p.id === child.userData.poiId)?.position[1] || 0;
-          child.position.y = originalY + Math.sin(time * 1.2) * 0.12;
+          child.position.y = originalY + Math.sin(time * 0.8) * 0.08;
           
-          // Smooth ring rotation
+          // Minimal ring rotation
           child.children.forEach((subChild) => {
             if (subChild instanceof THREE.Mesh && subChild.geometry instanceof THREE.TorusGeometry) {
-              subChild.rotation.z += 0.012;
-              subChild.rotation.x += 0.006;
+              subChild.rotation.z += 0.008;
+              subChild.rotation.x += 0.004;
             }
           });
         }
       });
 
-      // Center marker elegant animation
+      // Center marker minimal animation
       const time = Date.now() * 0.001;
-      centerContainer.rotation.z += 0.006;
+      centerContainer.rotation.z += 0.003;
       centerContainer.children.forEach((child) => {
         if (child instanceof THREE.Mesh && child.geometry instanceof THREE.TorusGeometry) {
-          child.rotation.z += 0.018;
+          child.rotation.z += 0.01;
         }
       });
 
@@ -434,27 +419,27 @@ const Map3D: React.FC = () => {
 
   return (
     <div className="relative w-full h-full">
-      {/* 3D Canvas - Golden Luxury Background */}
+      {/* 3D Canvas - Clean White Background */}
       <div
         ref={containerRef}
-        className="w-full h-[500px] rounded-2xl shadow-2xl border-4 border-primary/20 overflow-hidden bg-gradient-to-br from-amber-50 via-yellow-50 to-amber-50"
+        className="w-full h-[500px] rounded-xl shadow-lg border border-gray-200 overflow-hidden bg-white"
       />
 
-      {/* Elegant Location Badge */}
+      {/* Location Badge - Minimalist */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.6 }}
-        className="absolute top-6 right-6 bg-white/98 backdrop-blur-md px-5 py-3 rounded-full shadow-2xl z-30 flex items-center gap-3 border border-primary/20"
+        className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg shadow-md z-30 flex items-center gap-3 border border-gray-200"
       >
-        <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+        <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
         <div>
-          <p className="text-xs font-semibold text-primary/70 uppercase tracking-wider">Location</p>
-          <p className="text-sm font-bold text-primary">Sector 40, Panipat</p>
+          <p className="text-xs font-semibold text-gray-600 uppercase tracking-wider">Location</p>
+          <p className="text-sm font-semibold text-gray-900">Sector 40, Panipat</p>
         </div>
       </motion.div>
 
-      {/* Luxury Info Panel */}
+      {/* Info Panel - Clean Design */}
       <motion.div
         initial={{ opacity: 0, x: -30, y: 30 }}
         animate={{ 
@@ -463,93 +448,93 @@ const Map3D: React.FC = () => {
           y: selectedPOI ? 0 : 30
         }}
         transition={{ duration: 0.4 }}
-        className="absolute bottom-6 left-6 bg-white/98 backdrop-blur-xl rounded-2xl shadow-2xl p-6 max-w-sm z-40 border border-primary/20"
+        className="absolute bottom-6 left-6 bg-white/98 backdrop-blur-sm rounded-lg shadow-lg p-5 max-w-sm z-40 border border-gray-200"
         style={{ pointerEvents: selectedPOI ? 'auto' : 'none' }}
       >
         {selectedPOI && (
           <div>
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex items-center gap-4">
+            <div className="flex items-start justify-between mb-3">
+              <div className="flex items-center gap-3">
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-lg"
+                  className="w-10 h-10 rounded-lg flex items-center justify-center text-white shadow-md"
                   style={{ backgroundColor: selectedPOI.color }}
                 >
                   {selectedPOI.icon}
                 </div>
                 <div>
-                  <h3 className="font-heading text-lg font-bold text-foreground">{selectedPOI.name}</h3>
-                  <p className="text-sm text-foreground/60 font-medium">{selectedPOI.distance} away</p>
+                  <h3 className="font-semibold text-gray-900 text-sm">{selectedPOI.name}</h3>
+                  <p className="text-xs text-gray-600">{selectedPOI.distance} away</p>
                 </div>
               </div>
               <button
                 onClick={() => setSelectedPOI(null)}
-                className="text-foreground/40 hover:text-foreground/80 transition-colors p-1"
+                className="text-gray-400 hover:text-gray-600 transition-colors p-1"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
               </button>
             </div>
-            <p className="text-sm text-foreground/70 leading-relaxed mb-4">{selectedPOI.description}</p>
-            <div className="h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent mb-4" />
-            <div className="flex items-center gap-2 text-xs text-foreground/60">
-              <MapPin className="w-4 h-4" />
-              <span>Click on other markers to explore</span>
+            <p className="text-xs text-gray-700 leading-relaxed mb-3">{selectedPOI.description}</p>
+            <div className="h-px bg-gray-200 mb-3" />
+            <div className="flex items-center gap-2 text-xs text-gray-600">
+              <MapPin className="w-3 h-3" />
+              <span>Click markers to explore</span>
             </div>
           </div>
         )}
       </motion.div>
 
-      {/* Golden Legend Panel */}
+      {/* Legend Panel - Minimalist */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
-        className="absolute top-6 left-6 bg-white/98 backdrop-blur-md rounded-2xl shadow-2xl p-5 z-30 max-w-xs border border-primary/20"
+        className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm rounded-lg shadow-md p-4 z-30 max-w-xs border border-gray-200"
       >
-        <h3 className="font-heading font-bold text-primary mb-4 text-sm uppercase tracking-wider">Nearby Places</h3>
-        <div className="space-y-3">
+        <h3 className="font-semibold text-gray-900 mb-3 text-xs uppercase tracking-wider">Nearby Places</h3>
+        <div className="space-y-2">
           {pois.map((poi) => (
             <motion.div
               key={poi.id}
-              whileHover={{ x: 4 }}
-              className={`flex items-center gap-3 p-3 rounded-lg transition-all cursor-pointer ${
+              whileHover={{ x: 2 }}
+              className={`flex items-center gap-2 p-2 rounded transition-all cursor-pointer ${
                 hoveredPOI === poi.id 
-                  ? 'bg-primary/10 border border-primary/30' 
-                  : 'hover:bg-amber-50 border border-transparent'
+                  ? 'bg-gray-100 border border-gray-300' 
+                  : 'hover:bg-gray-50 border border-transparent'
               }`}
             >
               <div
-                className="w-3 h-3 rounded-full flex-shrink-0 shadow-md"
+                className="w-2.5 h-2.5 rounded-full flex-shrink-0"
                 style={{ backgroundColor: poi.color }}
               />
               <div className="flex-1 min-w-0">
-                <p className="font-semibold text-foreground text-sm truncate">{poi.name}</p>
-                <p className="text-xs text-foreground/60">{poi.distance}</p>
+                <p className="font-medium text-gray-900 text-xs truncate">{poi.name}</p>
+                <p className="text-xs text-gray-600">{poi.distance}</p>
               </div>
             </motion.div>
           ))}
         </div>
       </motion.div>
 
-      {/* Elegant Instructions */}
+      {/* Instructions - Subtle */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
-        className="absolute bottom-6 right-6 bg-white/98 backdrop-blur-md rounded-2xl shadow-2xl p-4 z-30 text-xs text-foreground/70 max-w-xs border border-primary/20"
+        className="absolute bottom-6 right-6 bg-white/95 backdrop-blur-sm rounded-lg shadow-md p-4 z-30 text-xs text-gray-700 max-w-xs border border-gray-200"
       >
-        <p className="font-heading font-bold text-primary mb-3 text-sm">✨ Interactive Map</p>
-        <ul className="space-y-2 text-xs text-foreground/70">
+        <p className="font-semibold text-gray-900 mb-2 text-xs">Interactive Map</p>
+        <ul className="space-y-1.5 text-xs text-gray-600">
           <li className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary/40" />
+            <span className="w-1 h-1 rounded-full bg-gray-400" />
             Hover to highlight locations
           </li>
           <li className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary/40" />
+            <span className="w-1 h-1 rounded-full bg-gray-400" />
             Click to view details
           </li>
           <li className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary/40" />
-            Watch the 3D animation
+            <span className="w-1 h-1 rounded-full bg-gray-400" />
+            Smooth 3D interactions
           </li>
         </ul>
       </motion.div>
