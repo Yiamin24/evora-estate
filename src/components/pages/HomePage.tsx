@@ -235,7 +235,7 @@ export default function HomePage() {
           </AnimatedElement>
 
           <AnimatedElement delay={400}>
-            <p className="font-heading text-2xl md:text-4xl text-gold-accent mb-8 font-light italic">
+            <p className="font-heading text-2xl md:text-4xl text-primary mb-8 font-light italic">
               by Godrej Properties
             </p>
           </AnimatedElement>
