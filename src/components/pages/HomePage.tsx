@@ -188,11 +188,11 @@ export default function HomePage() {
       <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
         <motion.div style={{ y: heroY, opacity: heroOpacity }} className="absolute inset-0 z-0">
           <Image
-            src="https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png?id=hero-resort-aerial"
-            alt="Evora Estate luxury resort-style township aerial view"
+            src="https://static.wixstatic.com/media/cef78c_0294cbf2be46425299f4ed4acd1dea82~mv2.png?id=hero-resort-aerial"
+            alt="Evora Estate luxury resort-style township aerial view with lush greenery"
             className="w-full h-full object-cover scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40" />
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay" />
         </motion.div>
 
@@ -461,7 +461,7 @@ export default function HomePage() {
                   // Fallback Slider Content
                   <>
                     <Image
-                      src={`https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png?id=${['lifestyle-park', 'lifestyle-trails', 'lifestyle-landscape', 'lifestyle-aerial', 'lifestyle-clubhouse'][currentSlide % 5]}`}
+                      src={'https://static.wixstatic.com/media/cef78c_18f05f7fe37d4a04af69d54d4637c019~mv2.png?originWidth=1024&originHeight=576'}
                       alt="Lifestyle"
                       className="w-full h-full object-cover"
                     />
@@ -528,7 +528,7 @@ export default function HomePage() {
               <div className="relative group">
                 <div className="absolute inset-0 bg-gold-accent/20 blur-3xl rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-700" />
                 <Image
-                  src={locationAdvantages?.mapIllustrationImage || 'https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png?id=location-map'}
+                  src={locationAdvantages?.mapIllustrationImage || 'https://static.wixstatic.com/media/cef78c_9e93d53231df40feabb3d7106b15637e~mv2.png?originWidth=896&originHeight=576'}
                   alt="Location Map"
                   className="w-full h-auto rounded-2xl shadow-2xl border-4 border-white relative z-10"
                 />
