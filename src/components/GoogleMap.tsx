@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import { MapPin, AlertCircle } from 'lucide-react';
 
 // Type declarations for Google Maps API
 declare global {
@@ -26,6 +27,8 @@ const GoogleMap: React.FC = () => {
   const mapInstanceRef = useRef<any>(null);
   const markersRef = useRef<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
+  const [scriptLoaded, setScriptLoaded] = useState(false);
 
   // Evora Estate - Sector 40, Panipat
   const locations: MapLocation[] = [
@@ -79,27 +82,49 @@ const GoogleMap: React.FC = () => {
   useEffect(() => {
     // Load Google Maps API
     const loadGoogleMaps = () => {
+      // Check if Google Maps is already loaded
       if (window.google && window.google.maps) {
+        setScriptLoaded(true);
         initializeMap();
-      } else {
-        // Create script tag for Google Maps API
-        const script = document.createElement('script');
-        script.src = `https://maps.googleapis.com/maps/api/js?key=${import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY || 'AIzaSyDemoKey'}`;
-        script.async = true;
-        script.defer = true;
-        script.onload = () => {
-          setTimeout(() => initializeMap(), 100);
-        };
-        script.onerror = () => {
-          console.error('Failed to load Google Maps API');
-          setIsLoading(false);
-        };
-        document.head.appendChild(script);
+        return;
       }
+
+      // Get API key from environment
+      const apiKey = import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY;
+      
+      if (!apiKey) {
+        console.warn('Google Maps API key not configured. Using fallback map view.');
+        setHasError(true);
+        setIsLoading(false);
+        return;
+      }
+
+      // Create script tag for Google Maps API
+      const script = document.createElement('script');
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}`;
+      script.async = true;
+      script.defer = true;
+      script.onload = () => {
+        setScriptLoaded(true);
+        setTimeout(() => initializeMap(), 100);
+      };
+      script.onerror = () => {
+        console.error('Failed to load Google Maps API');
+        setHasError(true);
+        setIsLoading(false);
+      };
+      document.head.appendChild(script);
     };
 
+    loadGoogleMaps();
+
     const initializeMap = () => {
-      if (!mapRef.current || !window.google || !window.google.maps) return;
+      if (!mapRef.current || !window.google || !window.google.maps) {
+        console.error('Map container or Google Maps API not available');
+        setHasError(true);
+        setIsLoading(false);
+        return;
+      }
 
       try {
         // Center on Evora Estate
@@ -232,8 +257,10 @@ const GoogleMap: React.FC = () => {
         });
 
         setIsLoading(false);
+        setHasError(false);
       } catch (error) {
         console.error('Error initializing map:', error);
+        setHasError(true);
         setIsLoading(false);
       }
     };
@@ -273,68 +300,94 @@ const GoogleMap: React.FC = () => {
         </motion.div>
       )}
 
-      {/* Info Badge */}
-      <motion.div
-        initial={{ opacity: 0, y: -20, scale: 0.8 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
-        className="absolute top-6 right-6 bg-white/95 backdrop-blur-md px-6 py-4 rounded-2xl shadow-lg z-30 flex items-center gap-4 border-2 border-primary/40 hover:border-primary/70 transition-colors"
-      >
+      {/* Error State */}
+      {hasError && !isLoading && (
         <motion.div
-          className="w-3 h-3 rounded-full bg-primary"
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        />
-        <div>
-          <p className="text-xs font-semibold text-primary uppercase tracking-wider">
-            📍 Location
-          </p>
-          <p className="text-sm font-bold text-foreground">
-            Sector 40, Panipat
-          </p>
-        </div>
-      </motion.div>
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="absolute inset-0 bg-white/95 backdrop-blur-sm flex items-center justify-center z-50 rounded-3xl"
+        >
+          <div className="text-center px-6">
+            <AlertCircle className="w-12 h-12 text-destructive mx-auto mb-4" />
+            <h3 className="text-lg font-semibold text-foreground mb-2">Map Not Available</h3>
+            <p className="text-sm text-foreground/70 mb-4">
+              The Google Maps API key is not configured. Please contact the administrator.
+            </p>
+            <div className="bg-gray-100 rounded-lg p-4 text-left text-xs text-foreground/60">
+              <p className="font-mono">
+                Set <code className="bg-gray-200 px-2 py-1 rounded">PUBLIC_GOOGLE_MAPS_API_KEY</code> in your environment variables.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      )}
+
+      {/* Info Badge */}
+      {!hasError && (
+        <motion.div
+          initial={{ opacity: 0, y: -20, scale: 0.8 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="absolute top-6 right-6 bg-white/95 backdrop-blur-md px-6 py-4 rounded-2xl shadow-lg z-30 flex items-center gap-4 border-2 border-primary/40 hover:border-primary/70 transition-colors"
+        >
+          <motion.div
+            className="w-3 h-3 rounded-full bg-primary"
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
+          <div>
+            <p className="text-xs font-semibold text-primary uppercase tracking-wider">
+              📍 Location
+            </p>
+            <p className="text-sm font-bold text-foreground">
+              Sector 40, Panipat
+            </p>
+          </div>
+        </motion.div>
+      )}
 
       {/* Instructions Badge */}
-      <motion.div
-        initial={{ opacity: 0, y: 20, scale: 0.8 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ delay: 0.4, duration: 0.6 }}
-        className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md rounded-2xl shadow-lg p-6 z-30 text-xs text-foreground max-w-sm border-2 border-primary/40 hover:border-primary/70 transition-colors"
-      >
-        <p className="font-semibold text-foreground mb-4 text-xs uppercase tracking-wide">
-          ✨ Map Features
-        </p>
-        <ul className="space-y-3 text-xs text-foreground/70">
-          <motion.li
-            className="flex items-center gap-3"
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5 }}
-          >
-            <div className="w-2.5 h-2.5 rounded-full bg-primary flex-shrink-0" />
-            <span className="font-medium">Click markers for details</span>
-          </motion.li>
-          <motion.li
-            className="flex items-center gap-3"
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.55 }}
-          >
-            <div className="w-2.5 h-2.5 rounded-full bg-primary flex-shrink-0" />
-            <span className="font-medium">Drag to pan the map</span>
-          </motion.li>
-          <motion.li
-            className="flex items-center gap-3"
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.6 }}
-          >
-            <div className="w-2.5 h-2.5 rounded-full bg-primary flex-shrink-0" />
-            <span className="font-medium">Scroll to zoom in/out</span>
-          </motion.li>
-        </ul>
-      </motion.div>
+      {!hasError && (
+        <motion.div
+          initial={{ opacity: 0, y: 20, scale: 0.8 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md rounded-2xl shadow-lg p-6 z-30 text-xs text-foreground max-w-sm border-2 border-primary/40 hover:border-primary/70 transition-colors"
+        >
+          <p className="font-semibold text-foreground mb-4 text-xs uppercase tracking-wide">
+            ✨ Map Features
+          </p>
+          <ul className="space-y-3 text-xs text-foreground/70">
+            <motion.li
+              className="flex items-center gap-3"
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              <div className="w-2.5 h-2.5 rounded-full bg-primary flex-shrink-0" />
+              <span className="font-medium">Click markers for details</span>
+            </motion.li>
+            <motion.li
+              className="flex items-center gap-3"
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.55 }}
+            >
+              <div className="w-2.5 h-2.5 rounded-full bg-primary flex-shrink-0" />
+              <span className="font-medium">Drag to pan the map</span>
+            </motion.li>
+            <motion.li
+              className="flex items-center gap-3"
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.6 }}
+            >
+              <div className="w-2.5 h-2.5 rounded-full bg-primary flex-shrink-0" />
+              <span className="font-medium">Scroll to zoom in/out</span>
+            </motion.li>
+          </ul>
+        </motion.div>
+      )}
     </div>
   );
 };
