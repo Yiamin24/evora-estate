@@ -236,12 +236,10 @@ export default function HomePage() {
           </AnimatedElement>
 
           <AnimatedElement delay={400}>
-            <div className="bg-black/25 backdrop-blur-sm rounded-2xl px-8 md:px-12 py-6 md:py-8 max-w-3xl mx-auto mb-12 border border-white/10">
-              <p className="text-lg md:text-xl text-white/90 leading-relaxed font-light">
-                Premium Resort-Style Plotted Development in Sector 40, Panipat. <br className="hidden md:block" />
-                <span className="text-light-gold font-medium">Launching at an Exclusive Pre-Launch Price – Limited 5-Day Window</span>
-              </p>
-            </div>
+            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-light" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.6)' }}>
+              Premium Resort-Style Plotted Development in Sector 40, Panipat. <br className="hidden md:block" />
+              <span className="text-light-gold font-medium" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 0.7)' }}>Launching at an Exclusive Pre-Launch Price – Limited 5-Day Window</span>
+            </p>
           </AnimatedElement>
 
           <AnimatedElement delay={800}>
