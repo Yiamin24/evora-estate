@@ -17,41 +17,41 @@ const StaticMap: React.FC = () => {
       id: 'evora',
       name: 'Evora Estate',
       description: 'Sector 40, Panipat',
-      x: 52,
-      y: 48,
+      x: 50,
+      y: 50,
       delay: 0.2,
     },
     {
-      id: 'delhi',
-      name: 'Delhi-NCR',
-      description: '60–70 minutes',
-      x: 35,
-      y: 25,
+      id: 'school',
+      name: 'International School of Excellence',
+      description: 'Nearby Education Hub',
+      x: 25,
+      y: 20,
       delay: 0.4,
     },
     {
-      id: 'karnal',
-      name: 'Karnal',
-      description: '40 minutes',
-      x: 65,
-      y: 35,
+      id: 'hospital',
+      name: 'Apollo Hospitals',
+      description: 'Healthcare Facility',
+      x: 70,
+      y: 65,
       delay: 0.6,
     },
   ];
 
   return (
-    <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
-      {/* Static Map Image */}
+    <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl bg-gray-100">
+      {/* Map Image - Fully Responsive */}
       <Image
-        src="https://static.wixstatic.com/media/cef78c_e7378617b52449968c9e6fc4a877d85b~mv2.png?originWidth=1152&originHeight=768"
-        alt="Map of Panipat showing Evora Estate location in Sector 40 with connectivity to Delhi-NCR and Karnal"
+        src="https://static.wixstatic.com/media/cef78c_4eb8389129164d20ae5f84d56138b12c~mv2.png"
+        alt="Map showing Evora Estate location with nearby amenities including International School of Excellence and Apollo Hospitals"
         className="w-full h-full object-cover"
       />
 
       {/* Dark Overlay for Better Contrast */}
-      <div className="absolute inset-0 bg-black/10" />
+      <div className="absolute inset-0 bg-black/5" />
 
-      {/* Location Markers */}
+      {/* Location Markers with Gold Pointers */}
       {locations.map((location) => (
         <motion.div
           key={location.id}
@@ -145,7 +145,7 @@ const StaticMap: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* Instructions */}
+      {/* Instructions - Responsive Positioning */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -157,15 +157,15 @@ const StaticMap: React.FC = () => {
         </p>
         <ul className="space-y-1.5 text-xs text-foreground/70">
           <li className="flex items-center gap-2">
-            <span className="w-1 h-1 rounded-full bg-gold-accent" />
+            <span className="w-1 h-1 rounded-full bg-gold-accent flex-shrink-0" />
             Prime NH44 GT Road access
           </li>
           <li className="flex items-center gap-2">
-            <span className="w-1 h-1 rounded-full bg-gold-accent" />
+            <span className="w-1 h-1 rounded-full bg-gold-accent flex-shrink-0" />
             Central Panipat connectivity
           </li>
           <li className="flex items-center gap-2">
-            <span className="w-1 h-1 rounded-full bg-gold-accent" />
+            <span className="w-1 h-1 rounded-full bg-gold-accent flex-shrink-0" />
             Excellent regional connectivity
           </li>
         </ul>
