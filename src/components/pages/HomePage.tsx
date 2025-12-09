@@ -1,4 +1,4 @@
-// HPI 1.6-G
+// HPI 1.6-G - Desktop-Only Layout (No Mobile Responsive)
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -134,7 +134,7 @@ export default function HomePage() {
   };
 
   const startCountdown = () => {
-    const targetDate = new Date('2025-12-20T23:59:59').getTime(); // Updated to end of pre-launch window
+    const targetDate = new Date('2025-12-20T23:59:59').getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -230,20 +230,20 @@ export default function HomePage() {
           </AnimatedElement>
 
           <AnimatedElement delay={200}>
-            <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-4 drop-shadow-2xl tracking-tight">
+            <h1 className="font-heading text-9xl font-bold text-white mb-4 drop-shadow-2xl tracking-tight">
               Evora Estate
             </h1>
           </AnimatedElement>
 
           <AnimatedElement delay={400}>
-            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
-              Premium Resort-Style Plotted Development in Sector 40, Panipat. <br className="hidden md:block" />
+            <p className="text-xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+              Premium Resort-Style Plotted Development in Sector 40, Panipat. <br />
               <span className="text-light-gold font-medium">Launching at an Exclusive Pre-Launch Price – Limited 5-Day Window</span>
             </p>
           </AnimatedElement>
 
           <AnimatedElement delay={800}>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex flex-row gap-6 justify-center items-center">
               <Button
                 onClick={scrollToContact}
                 size="lg"
@@ -269,16 +269,16 @@ export default function HomePage() {
       </section>
 
       {/* 2️⃣ KEY HIGHLIGHTS SECTION (LUXURY IMAGE CARDS WITH ANIMATED OVERLAYS) */}
-      <section id="highlights" className="py-24 md:py-32 bg-white relative">
+      <section id="highlights" className="py-32 bg-white relative">
         <div className="container mx-auto px-6 max-w-[120rem]">
           <AnimatedElement>
             <div className="text-center mb-16">
-              <h2 className="font-heading text-5xl md:text-6xl font-bold text-primary mb-4">43 Acres Township</h2>
+              <h2 className="font-heading text-6xl font-bold text-primary mb-4">43 Acres Township</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">Expansive integrated living with premium amenities and thoughtfully designed spaces</p>
             </div>
           </AnimatedElement>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-4 gap-6">
             {keyHighlights.length > 0 ? (
               keyHighlights.map((highlight, index) => (
                 <AnimatedElement key={highlight._id} delay={index * 100}>
@@ -303,7 +303,7 @@ export default function HomePage() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="font-heading text-3xl md:text-4xl font-bold text-white mb-3"
+                        className="font-heading text-4xl font-bold text-white mb-3"
                       >
                         {highlight.highlightTitle}
                       </motion.h3>
@@ -362,7 +362,7 @@ export default function HomePage() {
                           initial={{ opacity: 0, y: 20 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.6, delay: 0.1 }}
-                          className="font-heading text-3xl md:text-4xl font-bold text-white mb-3"
+                          className="font-heading text-4xl font-bold text-white mb-3"
                         >
                           {item.title}
                         </motion.h3>
@@ -406,12 +406,12 @@ export default function HomePage() {
         <div className="container mx-auto px-6 max-w-[120rem] relative z-10">
           <AnimatedElement>
             <div className="text-center mb-16">
-              <h2 className="font-heading text-5xl md:text-6xl font-bold text-primary mb-4">Exclusive Pre-Launch Pricing</h2>
+              <h2 className="font-heading text-6xl font-bold text-primary mb-4">Exclusive Pre-Launch Pricing</h2>
               <p className="text-foreground/60 max-w-2xl mx-auto">Secure your legacy at an unbeatable value. Offer valid for a limited time.</p>
             </div>
           </AnimatedElement>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-center">
+          <div className="grid grid-cols-2 gap-8 max-w-5xl mx-auto items-center">
             {/* Standard Price Card */}
             <AnimatedElement delay={100}>
               <div className="bg-white p-10 rounded-2xl border border-gray-200 shadow-sm opacity-80 hover:opacity-100 transition-opacity">
@@ -468,12 +468,12 @@ export default function HomePage() {
       <section className="py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-6 max-w-[120rem]">
           <AnimatedElement>
-            <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+            <div className="flex flex-row justify-between items-end mb-12">
               <div className="max-w-2xl">
-                <h2 className="font-heading text-5xl md:text-6xl font-bold text-primary mb-4">Experience Resort-Style Living</h2>
+                <h2 className="font-heading text-6xl font-bold text-primary mb-4">Experience Resort-Style Living</h2>
                 <p className="text-lg text-foreground/70">Green open spaces, peaceful landscapes, and thoughtfully designed neighbourhoods.</p>
               </div>
-              <div className="flex gap-4 mt-6 md:mt-0">
+              <div className="flex gap-4">
                 <Button variant="outline" size="icon" onClick={prevSlide} className="rounded-full border-primary/30 hover:bg-primary hover:text-white transition-colors">
                   <ChevronLeft className="w-6 h-6" />
                 </Button>
@@ -507,7 +507,7 @@ export default function HomePage() {
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.3 }}
-                        className="font-heading text-4xl md:text-5xl font-bold text-white mb-4"
+                        className="font-heading text-5xl font-bold text-white mb-4"
                       >
                         {lifestyleGallery[currentSlide].imageTitle}
                       </motion.h3>
@@ -535,7 +535,7 @@ export default function HomePage() {
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.3 }}
-                        className="font-heading text-4xl md:text-5xl font-bold text-white mb-4"
+                        className="font-heading text-5xl font-bold text-white mb-4"
                       >
                         {['Green Park Spaces', 'Walking Trails', 'Beautiful Landscapes', 'Aerial Township View', 'Clubhouse Amenities'][currentSlide % 5]}
                       </motion.h3>
@@ -559,9 +559,9 @@ export default function HomePage() {
       {/* 5️⃣ LOCATION ADVANTAGE SECTION */}
       <section id="location" className="py-24 bg-gradient-to-br from-primary/5 to-gold-accent/5">
         <div className="container mx-auto px-6 max-w-[120rem]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-2 gap-16 items-center">
             <AnimatedElement>
-              <h2 className="font-heading text-5xl md:text-6xl font-bold text-primary mb-8 leading-tight">
+              <h2 className="font-heading text-6xl font-bold text-primary mb-8 leading-tight">
                 {locationAdvantages?.sectionHeadline || 'A Location That Connects You Everywhere'}
               </h2>
               <div className="space-y-6">
@@ -589,7 +589,7 @@ export default function HomePage() {
             </AnimatedElement>
 
             <AnimatedElement delay={200}>
-              <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px]">
+              <div className="relative w-full h-[700px]">
                 <CustomMap />
               </div>
             </AnimatedElement>
@@ -606,7 +606,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
-                className="font-heading text-5xl md:text-7xl font-bold text-primary mb-6"
+                className="font-heading text-7xl font-bold text-primary mb-6"
               >
                 Why Choose Evora Estate
               </motion.h2>
@@ -628,7 +628,7 @@ export default function HomePage() {
           </AnimatedElement>
 
           {/* Enhanced Grid with Image-First Design */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-3 gap-8">
             {projectUSPs.length > 0 ? (
               projectUSPs.map((usp, i) => (
                 <AnimatedElement key={usp._id} delay={i * 80}>
@@ -685,7 +685,7 @@ export default function HomePage() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: i * 0.08 + 0.1 }}
-                        className="font-heading text-2xl md:text-3xl font-bold text-white mb-3 leading-tight"
+                        className="font-heading text-3xl font-bold text-white mb-3 leading-tight"
                       >
                         {usp.uspText}
                       </motion.h3>
@@ -821,7 +821,7 @@ export default function HomePage() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: i * 0.08 + 0.1 }}
-                        className="font-heading text-2xl md:text-3xl font-bold text-white mb-3 leading-tight"
+                        className="font-heading text-3xl font-bold text-white mb-3 leading-tight"
                       >
                         {item.title}
                       </motion.h3>
@@ -863,18 +863,18 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20" />
         <div className="container mx-auto px-6 max-w-[120rem] relative z-10 text-center">
           <AnimatedElement>
-            <h2 className="font-heading text-5xl md:text-7xl font-bold text-gold-accent mb-4">Pre-Launch Ends Soon</h2>
+            <h2 className="font-heading text-7xl font-bold text-gold-accent mb-4">Pre-Launch Ends Soon</h2>
             <p className="text-xl text-white/80 mb-12">December 15–20, 2025 | Limited 5-day opportunity</p>
           </AnimatedElement>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
+          <div className="grid grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
             {Object.entries(timeLeft).map(([unit, value], i) => (
               <AnimatedElement key={unit} delay={i * 100}>
                 <div className="bg-white/5 backdrop-blur-md border border-gold-accent/30 rounded-2xl p-6">
-                  <div className="font-heading text-5xl md:text-6xl font-bold text-white mb-2 tabular-nums">
+                  <div className="font-heading text-6xl font-bold text-white mb-2 tabular-nums">
                     {String(value).padStart(2, '0')}
                   </div>
-                  <div className="text-xs md:text-sm uppercase tracking-widest text-gold-accent">{unit}</div>
+                  <div className="text-sm uppercase tracking-widest text-gold-accent">{unit}</div>
                 </div>
               </AnimatedElement>
             ))}
@@ -893,12 +893,12 @@ export default function HomePage() {
         <div className="container mx-auto px-6 max-w-[120rem]">
           <AnimatedElement>
             <div className="text-center mb-16">
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-primary mb-4">Trusted Partners</h2>
+              <h2 className="font-heading text-5xl font-bold text-primary mb-4">Trusted Partners</h2>
               <div className="h-1 w-24 bg-primary mx-auto" />
             </div>
           </AnimatedElement>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 gap-12 max-w-5xl mx-auto">
             {/* Godrej */}
             <AnimatedElement delay={100}>
               <div className="p-10 bg-background rounded-2xl border border-primary/10 text-center h-full hover:shadow-xl transition-shadow">
@@ -951,12 +951,12 @@ export default function HomePage() {
         <div className="container mx-auto px-6 max-w-[120rem] relative z-10">
           <div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border border-primary/20">
             <div className="bg-primary p-8 text-center">
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-2">Get Pre-Launch Access</h2>
+              <h2 className="font-heading text-4xl font-bold text-white mb-2">Get Pre-Launch Access</h2>
               <p className="text-white/90">Limited slots | Best pricing guaranteed</p>
             </div>
-            <div className="p-8 md:p-12">
+            <div className="p-12">
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-foreground/70">Full Name</label>
                     <Input
