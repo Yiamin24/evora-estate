@@ -289,22 +289,61 @@ export default function HomePage() {
                 </AnimatedElement>
               ))
             ) : (
-              // Fallback Static Data
+              // Fallback Static Data with Images
               <>
                 {[
-                  { icon: <Grid3x3 />, title: "43 Acres Township", desc: "Expansive Integrated Living" },
-                  { icon: <Home />, title: "750 Premium Plots", desc: "Exclusive Inventory" },
-                  { icon: <Leaf />, title: "Resort-Style Living", desc: "Nature-First Design" },
-                  { icon: <Shield />, title: "RERA Approved", desc: "RERA-PKL-1860-2025" }
+                  { 
+                    title: "43 Acres Township", 
+                    desc: "Expansive Integrated Living",
+                    image: "https://static.wixstatic.com/media/cef78c_0294cbf2be46425299f4ed4acd1dea82~mv2.png?id=highlight-township"
+                  },
+                  { 
+                    title: "750 Premium Plots", 
+                    desc: "Exclusive Inventory",
+                    image: "https://static.wixstatic.com/media/cef78c_18f05f7fe37d4a04af69d54d4637c019~mv2.png?id=highlight-plots"
+                  },
+                  { 
+                    title: "Resort-Style Living", 
+                    desc: "Nature-First Design",
+                    image: "https://static.wixstatic.com/media/cef78c_9e93d53231df40feabb3d7106b15637e~mv2.png?id=highlight-resort"
+                  },
+                  { 
+                    title: "RERA Approved", 
+                    desc: "RERA-PKL-1860-2025",
+                    image: "https://static.wixstatic.com/media/cef78c_0294cbf2be46425299f4ed4acd1dea82~mv2.png?id=highlight-rera"
+                  }
                 ].map((item, i) => (
                   <AnimatedElement key={i} delay={i * 100}>
-                    <div className="group h-full p-8 bg-white border border-primary/10 hover:border-primary/60 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 rounded-xl flex flex-col items-center text-center relative overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-br from-light-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <div className="mb-6 p-4 rounded-full bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300 text-primary">
-                        {React.cloneElement(item.icon as React.ReactElement, { className: "w-10 h-10 stroke-[1.5]" })}
+                    <div className="group relative h-80 rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 cursor-pointer">
+                      {/* Background Image */}
+                      <Image 
+                        src={item.image} 
+                        alt={item.title} 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                      />
+                      
+                      {/* Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 group-hover:via-black/50 transition-all duration-500" />
+                      
+                      {/* Content Overlay */}
+                      <div className="absolute inset-0 flex flex-col justify-end p-8">
+                        <motion.h3 
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.1 }}
+                          className="font-heading text-3xl md:text-4xl font-bold text-white mb-3"
+                        >
+                          {item.title}
+                        </motion.h3>
+                        <motion.p 
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.2 }}
+                          className="text-white/90 text-base leading-relaxed"
+                        >
+                          {item.desc}
+                        </motion.p>
                       </div>
-                      <h3 className="font-heading text-2xl font-bold text-foreground mb-3 relative z-10">{item.title}</h3>
-                      <p className="text-sm text-foreground/60 relative z-10">{item.desc}</p>
                     </div>
                   </AnimatedElement>
                 ))}
