@@ -8,6 +8,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Map3D from '@/components/Map3D';
 import {
   Leaf,
   MapPin,
@@ -591,37 +592,8 @@ export default function HomePage() {
               <div className="relative group h-full">
                 <div className="absolute inset-0 bg-gold-accent/20 blur-3xl rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-700" />
                 
-                {/* Interactive Google Map */}
-                <div className="w-full h-[500px] rounded-2xl shadow-2xl border-4 border-white overflow-hidden relative z-10 bg-gray-100">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3436.7428571428573!2d79.38!3d29.39!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a1c2b8c2b8c2b9%3A0x1234567890abcdef!2sEvora%20Estate%2C%20Sector%2040%2C%20Panipat!5e0!3m2!1sen!2sin!4v1702000000000"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen={true}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Evora Estate Location Map"
-                    className="w-full h-full"
-                  />
-                </div>
-
-                {/* Fallback Image if Map Doesn't Load */}
-                <div className="absolute inset-0 rounded-2xl overflow-hidden z-0">
-                  {locationAdvantages?.mapIllustrationImage && (
-                    <Image
-                      src={locationAdvantages.mapIllustrationImage}
-                      alt="Location Map"
-                      className="w-full h-full object-cover"
-                    />
-                  )}
-                </div>
-
-                {/* Location Badge */}
-                <div className="absolute top-6 right-6 bg-white px-4 py-2 rounded-full shadow-lg z-30 flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-primary" />
-                  <span className="text-sm font-bold text-primary">Sector 40, Panipat</span>
-                </div>
+                {/* 3D Interactive Map */}
+                <Map3D />
               </div>
             </AnimatedElement>
           </div>
