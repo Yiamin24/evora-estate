@@ -28,7 +28,7 @@ const Map3D: React.FC = () => {
   const markersRef = useRef<Map<string, THREE.Object3D>>(new Map());
   const cameraTargetRef = useRef(new THREE.Vector3(0, 0, 8));
 
-  // Points of Interest around Evora Estate - Luxury Color Palette
+  // Points of Interest around Evora Estate - Golden Luxury Palette
   const pois: POI[] = [
     {
       id: 'school-1',
@@ -38,8 +38,8 @@ const Map3D: React.FC = () => {
       description: 'Premium educational institution',
       distance: '2.5 km',
       icon: <GraduationCap className="w-4 h-4" />,
-      color: '#6366F1',
-      hexColor: 0x6366F1,
+      color: '#D4AF37',
+      hexColor: 0xD4AF37,
     },
     {
       id: 'hospital-1',
@@ -49,8 +49,8 @@ const Map3D: React.FC = () => {
       description: 'Multi-specialty hospital',
       distance: '1.8 km',
       icon: <Heart className="w-4 h-4" />,
-      color: '#EF4444',
-      hexColor: 0xEF4444,
+      color: '#C9A961',
+      hexColor: 0xC9A961,
     },
     {
       id: 'mall-1',
@@ -60,8 +60,8 @@ const Map3D: React.FC = () => {
       description: 'Shopping & entertainment hub',
       distance: '3.2 km',
       icon: <ShoppingCart className="w-4 h-4" />,
-      color: '#F97316',
-      hexColor: 0xF97316,
+      color: '#E6C200',
+      hexColor: 0xE6C200,
     },
     {
       id: 'park-1',
@@ -71,8 +71,8 @@ const Map3D: React.FC = () => {
       description: 'Recreational green space',
       distance: '1.5 km',
       icon: <MapPin className="w-4 h-4" />,
-      color: '#10B981',
-      hexColor: 0x10B981,
+      color: '#B8956A',
+      hexColor: 0xB8956A,
     },
     {
       id: 'metro-1',
@@ -82,8 +82,8 @@ const Map3D: React.FC = () => {
       description: 'Public transport hub',
       distance: '2.1 km',
       icon: <Zap className="w-4 h-4" />,
-      color: '#A855F7',
-      hexColor: 0xA855F7,
+      color: '#D4A574',
+      hexColor: 0xD4A574,
     },
     {
       id: 'market-1',
@@ -93,18 +93,18 @@ const Map3D: React.FC = () => {
       description: 'Daily essentials & groceries',
       distance: '0.8 km',
       icon: <Building2 className="w-4 h-4" />,
-      color: '#EC4899',
-      hexColor: 0xEC4899,
+      color: '#C9B037',
+      hexColor: 0xC9B037,
     },
   ];
 
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Scene Setup - Luxury Dark Theme
+    // Scene Setup - Golden Luxury Theme
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x0F172A); // Deep navy
-    scene.fog = new THREE.Fog(0x0F172A, 20, 50);
+    scene.background = new THREE.Color(0xFAF6F1); // Warm cream/ivory
+    scene.fog = new THREE.Fog(0xFAF6F1, 30, 60);
     sceneRef.current = scene;
 
     // Camera Setup
@@ -124,16 +124,16 @@ const Map3D: React.FC = () => {
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFShadowMap;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.2;
+    renderer.toneMappingExposure = 1.1;
     containerRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
-    // Luxury Lighting Setup
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+    // Golden Lighting Setup
+    const ambientLight = new THREE.AmbientLight(0xFFE4B5, 0.5); // Moccasin warm light
     scene.add(ambientLight);
 
-    // Key Light
-    const keyLight = new THREE.DirectionalLight(0xffffff, 1);
+    // Key Light - Warm Gold
+    const keyLight = new THREE.DirectionalLight(0xFFF8DC, 1.2); // Cornsilk
     keyLight.position.set(8, 12, 8);
     keyLight.castShadow = true;
     keyLight.shadow.mapSize.width = 2048;
@@ -146,34 +146,34 @@ const Map3D: React.FC = () => {
     keyLight.shadow.bias = -0.0001;
     scene.add(keyLight);
 
-    // Fill Light (Gold accent)
-    const fillLight = new THREE.DirectionalLight(0xFFD700, 0.3);
+    // Fill Light (Warm Gold)
+    const fillLight = new THREE.DirectionalLight(0xFFD700, 0.4); // Gold
     fillLight.position.set(-8, 6, -8);
     scene.add(fillLight);
 
-    // Back Light (Rim light)
-    const rimLight = new THREE.DirectionalLight(0x87CEEB, 0.2);
+    // Back Light (Soft Gold)
+    const rimLight = new THREE.DirectionalLight(0xF0E68C, 0.3); // Khaki
     rimLight.position.set(0, 8, -10);
     scene.add(rimLight);
 
-    // Ground Plane - Luxury Material
+    // Ground Plane - Elegant Cream/Gold Material
     const groundGeometry = new THREE.PlaneGeometry(16, 16);
     const groundMaterial = new THREE.MeshStandardMaterial({
-      color: 0x1E293B,
-      metalness: 0.3,
-      roughness: 0.7,
-      envMapIntensity: 0.5,
+      color: 0xF5F1E8,
+      metalness: 0.2,
+      roughness: 0.6,
+      envMapIntensity: 0.4,
     });
     const ground = new THREE.Mesh(groundGeometry, groundMaterial);
     ground.receiveShadow = true;
     ground.position.z = -0.1;
     scene.add(ground);
 
-    // Subtle Grid Pattern
-    const gridHelper = new THREE.GridHelper(16, 16, 0x475569, 0x334155);
+    // Elegant Gold Grid Pattern
+    const gridHelper = new THREE.GridHelper(16, 16, 0xD4AF37, 0xE6C200);
     gridHelper.position.z = 0.01;
     gridHelper.material.transparent = true;
-    gridHelper.material.opacity = 0.3;
+    gridHelper.material.opacity = 0.25;
     scene.add(gridHelper);
 
     // Marker Group
@@ -181,17 +181,17 @@ const Map3D: React.FC = () => {
     scene.add(markerGroup);
     markerGroupRef.current = markerGroup;
 
-    // Create Luxury Markers for POIs
+    // Create Golden Luxury Markers for POIs
     pois.forEach((poi) => {
-      // Main Marker Sphere - Premium Material
+      // Main Marker Sphere - Premium Gold Material
       const markerGeometry = new THREE.SphereGeometry(0.35, 64, 64);
       const markerMaterial = new THREE.MeshStandardMaterial({
         color: poi.hexColor,
-        metalness: 0.8,
-        roughness: 0.2,
+        metalness: 0.85,
+        roughness: 0.15,
         emissive: poi.hexColor,
-        emissiveIntensity: 0.6,
-        envMapIntensity: 1,
+        emissiveIntensity: 0.7,
+        envMapIntensity: 1.1,
       });
       const marker = new THREE.Mesh(markerGeometry, markerMaterial);
       marker.position.set(...poi.position);
@@ -199,30 +199,30 @@ const Map3D: React.FC = () => {
       marker.receiveShadow = true;
       marker.userData = { poiId: poi.id };
 
-      // Outer Glow Ring
+      // Elegant Outer Ring - Gold
       const ringGeometry = new THREE.TorusGeometry(0.6, 0.06, 32, 200);
       const ringMaterial = new THREE.MeshStandardMaterial({
         color: poi.hexColor,
-        metalness: 0.9,
-        roughness: 0.1,
+        metalness: 0.92,
+        roughness: 0.08,
         emissive: poi.hexColor,
-        emissiveIntensity: 0.8,
+        emissiveIntensity: 0.85,
       });
       const ring = new THREE.Mesh(ringGeometry, ringMaterial);
       ring.position.copy(marker.position);
       ring.rotation.x = Math.PI / 3.5;
       ring.castShadow = true;
 
-      // Halo Effect (Larger transparent ring)
+      // Soft Halo Effect - Subtle Gold Glow
       const haloGeometry = new THREE.TorusGeometry(0.9, 0.03, 32, 200);
       const haloMaterial = new THREE.MeshStandardMaterial({
         color: poi.hexColor,
-        metalness: 0.7,
-        roughness: 0.3,
+        metalness: 0.75,
+        roughness: 0.25,
         emissive: poi.hexColor,
-        emissiveIntensity: 0.4,
+        emissiveIntensity: 0.5,
         transparent: true,
-        opacity: 0.6,
+        opacity: 0.5,
       });
       const halo = new THREE.Mesh(haloGeometry, haloMaterial);
       halo.position.copy(marker.position);
@@ -239,15 +239,15 @@ const Map3D: React.FC = () => {
       markersRef.current.set(poi.id, container);
     });
 
-    // Evora Estate Center Marker - Premium Gold
+    // Evora Estate Center Marker - Premium Bright Gold
     const centerGeometry = new THREE.SphereGeometry(0.5, 64, 64);
     const centerMaterial = new THREE.MeshStandardMaterial({
-      color: 0xB8860B,
-      metalness: 0.85,
-      roughness: 0.15,
+      color: 0xFFD700,
+      metalness: 0.9,
+      roughness: 0.1,
       emissive: 0xFFD700,
-      emissiveIntensity: 0.8,
-      envMapIntensity: 1.2,
+      emissiveIntensity: 0.9,
+      envMapIntensity: 1.3,
     });
     const centerMarker = new THREE.Mesh(centerGeometry, centerMaterial);
     centerMarker.position.set(0, 0, 0);
@@ -270,10 +270,10 @@ const Map3D: React.FC = () => {
       return ring;
     };
 
-    const centerRing1 = createCenterRing(0.8, 0xFFD700, 0.9);
+    const centerRing1 = createCenterRing(0.8, 0xFFD700, 0.95);
     centerRing1.rotation.x = Math.PI / 3;
 
-    const centerRing2 = createCenterRing(1.1, 0xB8860B, 0.6);
+    const centerRing2 = createCenterRing(1.1, 0xD4AF37, 0.7);
     centerRing2.rotation.x = Math.PI / 2.5;
     centerRing2.rotation.z = Math.PI / 4;
 
@@ -283,11 +283,11 @@ const Map3D: React.FC = () => {
     centerContainer.add(centerRing2);
     markerGroup.add(centerContainer);
 
-    // Premium Connection Lines
+    // Elegant Gold Connection Lines
     const linesMaterial = new THREE.LineBasicMaterial({
-      color: 0xFFD700,
+      color: 0xD4AF37,
       transparent: true,
-      opacity: 0.25,
+      opacity: 0.3,
       linewidth: 1,
     });
 
@@ -316,14 +316,14 @@ const Map3D: React.FC = () => {
       });
       setHoveredPOI(null);
 
-      // Highlight hovered marker
+      // Highlight hovered marker with elegant scale
       if (intersects.length > 0) {
         let parent = intersects[0].object.parent;
         while (parent && !parent.userData.poiId) {
           parent = parent.parent;
         }
         if (parent && parent.userData.poiId) {
-          parent.scale.set(1.4, 1.4, 1.4);
+          parent.scale.set(1.5, 1.5, 1.5);
           setHoveredPOI(parent.userData.poiId);
           
           // Smooth camera movement towards marker
@@ -383,36 +383,36 @@ const Map3D: React.FC = () => {
       camera.position.lerp(cameraTargetRef.current, 0.08);
       camera.lookAt(0, 0, 0);
 
-      // Rotate marker group slowly
+      // Gentle rotation of marker group
       if (markerGroup) {
-        markerGroup.rotation.z += 0.00015;
+        markerGroup.rotation.z += 0.0001;
       }
 
-      // Enhanced pulse animation for markers
+      // Elegant floating animation for markers
       markerGroup.children.forEach((child) => {
         if (child instanceof THREE.Group && child !== centerContainer) {
           const time = Date.now() * 0.001;
           
           // Subtle floating animation
           const originalY = pois.find(p => p.id === child.userData.poiId)?.position[1] || 0;
-          child.position.y = originalY + Math.sin(time * 1.5) * 0.15;
+          child.position.y = originalY + Math.sin(time * 1.2) * 0.12;
           
-          // Ring rotation
+          // Smooth ring rotation
           child.children.forEach((subChild) => {
             if (subChild instanceof THREE.Mesh && subChild.geometry instanceof THREE.TorusGeometry) {
-              subChild.rotation.z += 0.015;
-              subChild.rotation.x += 0.008;
+              subChild.rotation.z += 0.012;
+              subChild.rotation.x += 0.006;
             }
           });
         }
       });
 
-      // Center marker animation
+      // Center marker elegant animation
       const time = Date.now() * 0.001;
-      centerContainer.rotation.z += 0.008;
+      centerContainer.rotation.z += 0.006;
       centerContainer.children.forEach((child) => {
         if (child instanceof THREE.Mesh && child.geometry instanceof THREE.TorusGeometry) {
-          child.rotation.z += 0.02;
+          child.rotation.z += 0.018;
         }
       });
 
@@ -434,18 +434,18 @@ const Map3D: React.FC = () => {
 
   return (
     <div className="relative w-full h-full">
-      {/* 3D Canvas */}
+      {/* 3D Canvas - Golden Luxury Background */}
       <div
         ref={containerRef}
-        className="w-full h-[500px] rounded-2xl shadow-2xl border-4 border-white overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
+        className="w-full h-[500px] rounded-2xl shadow-2xl border-4 border-primary/20 overflow-hidden bg-gradient-to-br from-amber-50 via-yellow-50 to-amber-50"
       />
 
-      {/* Premium Location Badge */}
+      {/* Elegant Location Badge */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.6 }}
-        className="absolute top-6 right-6 bg-white/95 backdrop-blur-md px-5 py-3 rounded-full shadow-2xl z-30 flex items-center gap-3 border border-white/20"
+        className="absolute top-6 right-6 bg-white/98 backdrop-blur-md px-5 py-3 rounded-full shadow-2xl z-30 flex items-center gap-3 border border-primary/20"
       >
         <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
         <div>
@@ -454,7 +454,7 @@ const Map3D: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* Premium Info Panel */}
+      {/* Luxury Info Panel */}
       <motion.div
         initial={{ opacity: 0, x: -30, y: 30 }}
         animate={{ 
@@ -463,7 +463,7 @@ const Map3D: React.FC = () => {
           y: selectedPOI ? 0 : 30
         }}
         transition={{ duration: 0.4 }}
-        className="absolute bottom-6 left-6 bg-white/98 backdrop-blur-xl rounded-2xl shadow-2xl p-6 max-w-sm z-40 border border-white/30"
+        className="absolute bottom-6 left-6 bg-white/98 backdrop-blur-xl rounded-2xl shadow-2xl p-6 max-w-sm z-40 border border-primary/20"
         style={{ pointerEvents: selectedPOI ? 'auto' : 'none' }}
       >
         {selectedPOI && (
@@ -489,7 +489,7 @@ const Map3D: React.FC = () => {
               </button>
             </div>
             <p className="text-sm text-foreground/70 leading-relaxed mb-4">{selectedPOI.description}</p>
-            <div className="h-px bg-gradient-to-r from-transparent via-foreground/10 to-transparent mb-4" />
+            <div className="h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent mb-4" />
             <div className="flex items-center gap-2 text-xs text-foreground/60">
               <MapPin className="w-4 h-4" />
               <span>Click on other markers to explore</span>
@@ -498,12 +498,12 @@ const Map3D: React.FC = () => {
         )}
       </motion.div>
 
-      {/* Elegant Legend Panel */}
+      {/* Golden Legend Panel */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
-        className="absolute top-6 left-6 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-5 z-30 max-w-xs border border-white/30"
+        className="absolute top-6 left-6 bg-white/98 backdrop-blur-md rounded-2xl shadow-2xl p-5 z-30 max-w-xs border border-primary/20"
       >
         <h3 className="font-heading font-bold text-primary mb-4 text-sm uppercase tracking-wider">Nearby Places</h3>
         <div className="space-y-3">
@@ -514,7 +514,7 @@ const Map3D: React.FC = () => {
               className={`flex items-center gap-3 p-3 rounded-lg transition-all cursor-pointer ${
                 hoveredPOI === poi.id 
                   ? 'bg-primary/10 border border-primary/30' 
-                  : 'hover:bg-gray-50 border border-transparent'
+                  : 'hover:bg-amber-50 border border-transparent'
               }`}
             >
               <div
@@ -530,12 +530,12 @@ const Map3D: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* Premium Instructions */}
+      {/* Elegant Instructions */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
-        className="absolute bottom-6 right-6 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-4 z-30 text-xs text-foreground/70 max-w-xs border border-white/30"
+        className="absolute bottom-6 right-6 bg-white/98 backdrop-blur-md rounded-2xl shadow-2xl p-4 z-30 text-xs text-foreground/70 max-w-xs border border-primary/20"
       >
         <p className="font-heading font-bold text-primary mb-3 text-sm">✨ Interactive Map</p>
         <ul className="space-y-2 text-xs text-foreground/70">
