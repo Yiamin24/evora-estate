@@ -235,12 +235,6 @@ export default function HomePage() {
           </AnimatedElement>
 
           <AnimatedElement delay={400}>
-            <p className="font-heading text-2xl md:text-4xl text-primary mb-8 font-light italic">
-              by Godrej Properties
-            </p>
-          </AnimatedElement>
-
-          <AnimatedElement delay={600}>
             <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
               Premium Resort-Style Plotted Development in Sector 40, Panipat. <br className="hidden md:block" />
               <span className="text-light-gold font-medium">Launching at an Exclusive Pre-Launch Price – Limited 5-Day Window</span>
