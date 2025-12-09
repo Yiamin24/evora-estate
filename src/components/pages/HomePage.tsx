@@ -8,7 +8,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import MapLibreGL from '@/components/MapLibreGL';
+import StaticMap from '@/components/StaticMap';
 import {
   Leaf,
   MapPin,
@@ -592,8 +592,8 @@ export default function HomePage() {
               <div className="relative group h-full">
                 <div className="absolute inset-0 bg-gold-accent/20 blur-3xl rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-700" />
                 
-                {/* MapLibre GL Interactive Map */}
-                <MapLibreGL />
+                {/* Static Map with Gold Pointers */}
+                <StaticMap />
               </div>
             </AnimatedElement>
           </div>
