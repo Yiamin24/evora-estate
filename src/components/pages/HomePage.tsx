@@ -224,26 +224,22 @@ export default function HomePage() {
 
         <div className="relative z-20 container mx-auto px-6 text-center">
           <AnimatedElement>
-            <div className="inline-block mb-8 px-5 py-2 border border-white/40 rounded-full backdrop-blur-md bg-black/30">
-              <span className="text-white text-sm tracking-widest uppercase font-semibold">RERA Approved: RERA-PKL-1860-2025</span>
+            <div className="inline-block mb-6 px-4 py-1 border border-white/30 rounded-full backdrop-blur-sm bg-white/10">
+              <span className="text-white/90 text-sm tracking-widest uppercase font-medium">RERA Approved: RERA-PKL-1860-2025</span>
             </div>
           </AnimatedElement>
 
           <AnimatedElement delay={200}>
-            <div className="mb-8 inline-block">
-              <h1 className="font-heading text-7xl md:text-9xl lg:text-[10rem] font-bold text-white tracking-tight leading-none">
-                Evora Estate
-              </h1>
-            </div>
+            <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-4 drop-shadow-2xl tracking-tight">
+              Evora Estate
+            </h1>
           </AnimatedElement>
 
           <AnimatedElement delay={400}>
-            <div className="max-w-4xl mx-auto mb-12 bg-black/40 backdrop-blur-md rounded-2xl p-8 md:p-10 border border-white/20">
-              <p className="text-xl md:text-2xl lg:text-3xl text-white max-w-3xl mx-auto leading-relaxed font-medium">
-                Premium Resort-Style Plotted Development in Sector 40, Panipat. <br className="hidden md:block" />
-                <span className="text-light-gold font-bold block mt-3">Launching at an Exclusive Pre-Launch Price – Limited 5-Day Window</span>
-              </p>
-            </div>
+            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+              Premium Resort-Style Plotted Development in Sector 40, Panipat. <br className="hidden md:block" />
+              <span className="text-light-gold font-medium">Launching at an Exclusive Pre-Launch Price – Limited 5-Day Window</span>
+            </p>
           </AnimatedElement>
 
           <AnimatedElement delay={800}>
