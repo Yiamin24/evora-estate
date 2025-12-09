@@ -1,0 +1,1093 @@
+{
+  "id": "1350a554-da37-47c5-aac9-5e977b40be33",
+  "siteName": "Evora Estate",
+  "domainUrl": "evoraestates.com",
+  "brandingPresets": [
+    {
+      "presetId": "00000000-eca9-4ba3-9247-495ff705d71e",
+      "brandIdentity": {
+        "designSummary": "**The Gilded Resort: A Symphony of White, Gold, and Serene Minimalism**\n\nVisual Vision: Evora Estate's digital presence will evoke a sense of understated luxury and resort-style tranquility. The design will be clean, spacious, and elegant, using a white and gold gradient theme to create a premium feel. The layout will be meticulously planned to guide the user through a seamless journey, highlighting the key features and benefits of this exclusive plotted development.\n\n**Execution Blueprint:**\n1. The Foundation: A 12-column grid provides the underlying structure, ensuring a balanced and harmonious layout.\n2. Whitespace as a Design Element: Generous use of negative space will create a sense of calm and sophistication, allowing each element to breathe.\n3. Typography: A classic serif font for headings paired with a modern sans-serif for body text will establish a clear visual hierarchy and enhance readability.\n4. Subtle Animations: Micro-animations, fade-ins, and parallax effects will add a touch of dynamism and engagement without being overwhelming.\n5. Gold Accents: Gold borders, accents, and dividers will be used sparingly to highlight key elements and reinforce the premium theme.\n6. Convert-Focused Layout: Strategic placement of CTAs and a clear, concise presentation of information will drive conversions and generate leads.",
+        "toneOfVoice": "Elegant, sophisticated, and trustworthy.",
+        "tones": [
+          "Premium",
+          "Exclusive",
+          "Resort-style",
+          "Peaceful",
+          "Luxurious"
+        ],
+        "designStyle": {
+          "primaryStyle": [
+            "Elegant",
+            "Minimalist"
+          ],
+          "supportingStyles": [
+            "Luxury",
+            "Resort-style"
+          ]
+        },
+        "palette": {
+          "colors": {
+            "primary": "#B8860B",
+            "primaryForeground": "#FFFFFF",
+            "secondary": "#A9A9A9",
+            "secondaryForeground": "#FFFFFF",
+            "background": "#F8F8FF",
+            "foreground": "#000000",
+            "customColors": [
+              {
+                "name": "goldAccent",
+                "value": "#FFD700"
+              },
+              {
+                "name": "lightGold",
+                "value": "#FAFAD2"
+              },
+              {
+                "name": "destructive",
+                "value": "#D32F2F"
+              },
+              {
+                "name": "destructive-foreground",
+                "value": "#FFFFFF"
+              }
+            ]
+          },
+          "paletteUsageGuide": "Use primary gold sparingly for key accents and interactive elements. Maintain a predominantly white and light gold background for a clean and luxurious feel.",
+          "paletteAccessibilityNotes": "Ensure sufficient contrast between text and background colors for readability. Use colorblindness simulators to verify accessibility."
+        },
+        "typography": {
+          "headings": {
+            "font": {
+              "role": "headings",
+              "fontFamily": "cormorantgaramond",
+              "fontJustification": ""
+            },
+            "headingsSimilarFonts": [],
+            "headingsUsageGuide": "Use Cormorant Garamond for all headings to establish a premium and elegant feel.",
+            "headingsAccessibilityNotes": "Ensure sufficient contrast with background colors. Adjust letter spacing for optimal readability."
+          },
+          "paragraphs": {
+            "font": {
+              "role": "paragraphs",
+              "fontFamily": "sora",
+              "fontJustification": ""
+            },
+            "paragraphsSimilarFonts": [],
+            "paragraphsUsageGuide": "Use Sora for all body text to provide a clean and modern contrast to the serif headings.",
+            "paragraphsAccessibilityNotes": "Ensure sufficient contrast with background colors. Use appropriate line height for readability."
+          },
+          "welcomeSectionTypography": {
+            "placement": "",
+            "implementation": ""
+          },
+          "fontSizes": [
+            {
+              "name": "xs",
+              "size": "0.75rem",
+              "lineHeight": "1",
+              "letterSpacing": "0.05em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "sm",
+              "size": "0.875rem",
+              "lineHeight": "1.25",
+              "letterSpacing": "0.025em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "base",
+              "size": "1rem",
+              "lineHeight": "1.5",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "lg",
+              "size": "1.125rem",
+              "lineHeight": "1.75",
+              "letterSpacing": "-0.025em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "xl",
+              "size": "1.25rem",
+              "lineHeight": "1.75",
+              "letterSpacing": "-0.025em",
+              "fontWeight": "500"
+            },
+            {
+              "name": "2xl",
+              "size": "1.5rem",
+              "lineHeight": "2",
+              "letterSpacing": "-0.05em",
+              "fontWeight": "500"
+            },
+            {
+              "name": "3xl",
+              "size": "1.875rem",
+              "lineHeight": "2.25",
+              "letterSpacing": "-0.05em",
+              "fontWeight": "600"
+            },
+            {
+              "name": "4xl",
+              "size": "2.25rem",
+              "lineHeight": "2.5",
+              "letterSpacing": "-0.05em",
+              "fontWeight": "600"
+            },
+            {
+              "name": "5xl",
+              "size": "3rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.05em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "6xl",
+              "size": "3.75rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.05em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "7xl",
+              "size": "4.5rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.05em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "8xl",
+              "size": "6rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.05em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "9xl",
+              "size": "8rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.05em",
+              "fontWeight": "700"
+            }
+          ]
+        },
+        "layout": {
+          "layoutDna": {
+            "densitySpectrum": "Sparse",
+            "contrastSpectrum": "Subtle",
+            "gridAlignmentSpectrum": "Symmetrical",
+            "negativeSpaceUsage": "Generous",
+            "textVsImageEmphasis": "Balanced",
+            "complexitySpectrum": "Simple"
+          },
+          "grid": {
+            "compositionApproach": "Strict 12-Column Grid with Typographic Hierarchy",
+            "spacing": {
+              "columns": "12",
+              "rows": "Auto",
+              "gaps": "Base unit: 8px. All grid gaps are 24px (3x base unit)."
+            },
+            "margins": "80px",
+            "padding": "40px"
+          },
+          "heroSectionLayout": "**Parallax Resort Vista**\nComposition (Tailwind Spec): Full-screen container (h-screen relative overflow-hidden). Background image (absolute inset-0 w-full h-full object-cover). Headline 'Evora Estate by Godrej Properties' (absolute top-1/4 left-1/2 -translate-x-1/2 text-white text-6xl font-bold text-center). Subheadline 'Premium Resort-Style Plotted Development in Sector 40, Panipat' (absolute top-1/2 left-1/2 -translate-x-1/2 text-white text-2xl text-center). Buttons (absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-4).\nSignature Hook (Framer Motion Spec): Background image uses `useScroll` and `useTransform` to create a parallax effect, moving slower than the rest of the page. Micro-particles (small white circles) are animated with `useMotionValue` to float randomly across the background."
+        },
+        "components": {
+          "containers": "Method: Whitespace, Style: 80px vertical margin",
+          "images": "Layout Role: Full-bleed background with a fixed position to create a window effect on scroll. | Gallery Type: Horizontal Scroll Filmstrip: A single-row gallery driven by horizontal scroll, where oversized items create a 'peek-a-boo' effect.",
+          "buttons": "Primary: background-color: #B8860B, color: #FFFFFF, border-radius: 8px, padding: 12px 24px. Secondary: background-color: transparent, color: #B8860B, border: 1px solid #B8860B, border-radius: 8px."
+        },
+        "graphicElements": {
+          "icons": "",
+          "illustrations": "",
+          "stickers": ""
+        }
+      },
+      "originImagesUrls": []
+    },
+    {
+      "presetId": "32d42d47-6ebc-45c2-a155-b39a7486cffd",
+      "brandIdentity": {
+        "designSummary": "This design features a minimalist and editorial aesthetic with a strong emphasis on typography and spatial balance. The layout uses a clean two-column grid with asymmetrical splits, combining large, elegant serif headings with simple sans-serif body text. The color palette is restrained, dominated by white backgrounds and black text, complemented by a muted olive custom accent for grounding elements like the footer. Generous white space and subtle dividing lines create a spacious, airy feel. Navigation and UI elements are minimal and understated, supporting a focus on content clarity and refined presentation. Overall, the design conveys a timeless, luxurious, and professional brand identity suitable for creative and design-focused industries.",
+        "toneOfVoice": "Sophisticated, refined, professional, and elegant with a calm and editorial personality.",
+        "tones": [
+          "Sophisticated",
+          "Minimalist",
+          "Editorial",
+          "Calm",
+          "Refined",
+          "Professional",
+          "Elegant",
+          "Timeless",
+          "Spacious",
+          "Luxurious"
+        ],
+        "designStyle": {
+          "primaryStyle": [
+            "Minimalism",
+            "Editorial"
+          ],
+          "supportingStyles": [
+            "Modern",
+            "Luxury"
+          ]
+        },
+        "palette": {
+          "colors": {
+            "primary": "#000000",
+            "primaryForeground": "#FFFFFF",
+            "secondary": "#FFFFFF",
+            "secondaryForeground": "#000000",
+            "background": "#FFFFFF",
+            "customColors": [
+              {
+                "name": "footerbackground",
+                "value": "#75693F"
+              },
+              {
+                "name": "foreground",
+                "value": "#000000"
+              },
+              {
+                "name": "destructive",
+                "value": "#DF3131"
+              },
+              {
+                "name": "destructiveforeground",
+                "value": "#FFFFFF"
+              }
+            ]
+          },
+          "paletteUsageGuide": "Use the 'primary' color predominantly for all main text elements, including headings, project titles, and navigation text on light backgrounds. The 'secondary' color serves as the base background, providing a clean and spacious canvas. The 'secondaryForeground' color is used for text on the 'secondary' background, ensuring high readability. The 'footerBackground' custom color is reserved for footer backgrounds, creating a warm, grounded contrast to the white page backgrounds. Text and links within the footer should use 'primaryForeground' to maintain legibility. This palette supports a high-contrast, elegant look with minimal color distractions, emphasizing typography and layout. Avoid using colors from content images to maintain brand consistency and clarity.",
+          "paletteAccessibilityNotes": "The 'primary' black (#000000) on 'secondary' white (#FFFFFF) background achieves excellent WCAG AAA contrast ratios for all text sizes, ensuring maximum readability. The 'primaryForeground' white (#FFFFFF) on 'footerBackground' (#7A6F4E) provides sufficient contrast to meet WCAG AA standards for body text and links. The palette's high contrast between text and backgrounds supports accessibility and legibility across devices and lighting conditions."
+        },
+        "typography": {
+          "headings": {
+            "font": {
+              "role": "Primary Heading Font",
+              "fontFamily": "futura-lt-w01-light",
+              "fontJustification": ""
+            },
+            "headingsSimilarFonts": [
+              "didot-w01-italic",
+              "baskervillemtw01-smbdit",
+              "cormorantgaramond"
+            ],
+            "headingsUsageGuide": "Use the 'playfair display' font for all major headings and project titles to convey sophistication and elegance. Pair with a clean sans-serif for body text to maintain readability and modernity. Maintain generous letter spacing and line height to enhance clarity and preserve the editorial tone. Headings should be black ('primary') on white ('secondary') backgrounds for maximum contrast. Avoid using the heading font for small text or body copy to prevent legibility issues.",
+            "headingsAccessibilityNotes": "Headings in 'playfair display' on 'secondary' white background with 'primary' black text meet WCAG AAA contrast standards, ensuring clear readability even at large sizes."
+          },
+          "paragraphs": {
+            "font": {
+              "role": "Main Body Text Font",
+              "fontFamily": "cormorantgaramond-light",
+              "fontJustification": ""
+            },
+            "paragraphsSimilarFonts": [
+              "nunito sans",
+              "raleway",
+              "work-sans-v2"
+            ],
+            "paragraphsUsageGuide": "Use 'open sans' for all body text, navigation links, and footer content to provide a clean and legible reading experience. Combine with 'playfair display' headings for a balanced typographic hierarchy. Maintain consistent font sizes and line heights to ensure comfortable reading. Text color should be 'primary' black on 'secondary' white backgrounds, and 'primaryForeground' white on 'footerBackground' for footer text. Avoid using the body font for large display text to preserve the editorial style.",
+            "paragraphsAccessibilityNotes": "Body text in 'open sans' with 'primary' black on 'secondary' white background meets WCAG AAA contrast requirements, supporting accessibility for all users."
+          },
+          "welcomeSectionTypography": {
+            "placement": "Vertical-axis Spine",
+            "implementation": "The welcome section uses a vertical split layout with large, vertically stacked typography on the left side, balanced by a large image on the right. The heading text is oversized and vertically aligned to create a strong visual spine that anchors the design. This placement emphasizes the brand name and core message with maximum impact, while the image provides contextual warmth and interest. The typography is carefully spaced with generous line height and letter spacing to maintain elegance and readability."
+          },
+          "fontSizes": [
+            {
+              "name": "xs",
+              "size": "0.75rem",
+              "lineHeight": "1.2",
+              "letterSpacing": "0.05em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "sm",
+              "size": "0.875rem",
+              "lineHeight": "1.3",
+              "letterSpacing": "0.04em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "base",
+              "size": "1rem",
+              "lineHeight": "1.5",
+              "letterSpacing": "0.03em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "lg",
+              "size": "1.125rem",
+              "lineHeight": "1.5",
+              "letterSpacing": "0.02em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "xl",
+              "size": "1.25rem",
+              "lineHeight": "1.5",
+              "letterSpacing": "0.01em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "2xl",
+              "size": "1.5rem",
+              "lineHeight": "1.4",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "3xl",
+              "size": "1.875rem",
+              "lineHeight": "1.3",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "4xl",
+              "size": "2.25rem",
+              "lineHeight": "1.2",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "5xl",
+              "size": "3rem",
+              "lineHeight": "1.1",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "6xl",
+              "size": "3.75rem",
+              "lineHeight": "1.1",
+              "letterSpacing": "-0.04em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "7xl",
+              "size": "4.5rem",
+              "lineHeight": "1.1",
+              "letterSpacing": "-0.05em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "8xl",
+              "size": "6rem",
+              "lineHeight": "1.1",
+              "letterSpacing": "-0.06em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "9xl",
+              "size": "8rem",
+              "lineHeight": "1.1",
+              "letterSpacing": "-0.07em",
+              "fontWeight": "400"
+            }
+          ]
+        },
+        "layout": {
+          "layoutDna": {
+            "densitySpectrum": "Spacious",
+            "contrastSpectrum": "High-Contrast",
+            "gridAlignmentSpectrum": "Strict Grid",
+            "negativeSpaceUsage": "Generous",
+            "textVsImageEmphasis": "Balanced",
+            "complexitySpectrum": "Simple & Clean"
+          },
+          "grid": {
+            "compositionApproach": "Column-based",
+            "spacing": {
+              "columns": "12-column grid",
+              "rows": "Defined content rows",
+              "gaps": "Consistent medium gaps"
+            },
+            "margins": "Generous page margins",
+            "padding": "Consistent padding within containers"
+          }
+        },
+        "components": {
+          "containers": "Containers are clean and minimal with no visible borders or shadows, relying on white space and grid alignment to separate content areas. The footer container uses a solid 'footerBackground' color to visually anchor the page.",
+          "images": "Images are large, high-quality, and used as focal points, often occupying half the screen width in split layouts. They have no borders or overlays, maintaining a natural and warm aesthetic that complements the minimal design.",
+          "buttons": "Buttons are minimal or absent in the screenshots; if used, they should be understated with simple outlines or solid fills in 'primary' black or 'footerBackground' colors, maintaining the refined aesthetic."
+        },
+        "graphicElements": {
+          "icons": "Icons are minimal and functional, such as the simple hamburger menu icon composed of three horizontal lines in 'primary' black, supporting the clean design without distraction.",
+          "illustrations": "No illustrations are present, reinforcing the minimalist and professional tone.",
+          "stickers": "No stickers or badges are used, maintaining a clean and uncluttered interface."
+        }
+      },
+      "originImagesUrls": [
+        "https://wixmp-fe53c9ff592a4da924211f23.wixmp.com/uploads/1750239609291-Group%201000002190.png"
+      ]
+    },
+    {
+      "presetId": "e3803693-24c3-4139-8260-016899e16953",
+      "brandIdentity": {
+        "designSummary": "This brand design embraces a minimalistic and modern editorial style, characterized by a restrained and professional color palette dominated by soft neutrals and muted pastels. The primary background is a very light grayish-white, complemented by subtle light blue content blocks that create visual separation without overwhelming the user. Typography is elegant and classic, featuring serif fonts for headings that convey sophistication and trustworthiness, paired with clean, readable serif or serif-inspired body text. The layout employs a balanced two-column grid with generous white space, ensuring clarity and ease of navigation. Abstract geometric dot-matrix style graphics subtly reinforce the AI and technology theme, integrated as understated visual motifs. UI elements such as navigation and buttons are minimal and refined, using thin lines and subtle contrasts to maintain the airy and professional aesthetic. Overall, the design communicates a calm, authoritative, and approachable tone suitable for professional consulting and technology sectors.",
+        "toneOfVoice": "Professional, calm, authoritative, and approachable with a sophisticated and trustworthy personality.",
+        "tones": [
+          "calm",
+          "professional",
+          "trustworthy",
+          "minimal",
+          "sophisticated",
+          "approachable",
+          "clean",
+          "modern",
+          "refined",
+          "balanced"
+        ],
+        "designStyle": {
+          "primaryStyle": [
+            "Minimalism",
+            "Editorial"
+          ],
+          "supportingStyles": [
+            "Modern",
+            "Tech-Inspired"
+          ]
+        },
+        "palette": {
+          "colors": {
+            "primary": "#B9D6E8",
+            "primaryForeground": "#333333",
+            "secondary": "#F9FAFB",
+            "secondaryForeground": "#333333",
+            "background": "#FFFFFF",
+            "customColors": [
+              {
+                "name": "darktext",
+                "value": "#333333"
+              },
+              {
+                "name": "buttonborder",
+                "value": "#333333"
+              },
+              {
+                "name": "contentblockbackground",
+                "value": "#E6F0F6"
+              },
+              {
+                "name": "foreground",
+                "value": "#333333"
+              },
+              {
+                "name": "destructive",
+                "value": "#DF3131"
+              },
+              {
+                "name": "destructiveforeground",
+                "value": "#FFFFFF"
+              }
+            ]
+          },
+          "paletteUsageGuide": "Use the 'background' color as the main page canvas to maintain a clean and open feel. The 'secondary' color is ideal for large content blocks or sections to create subtle visual separation without heavy contrast. The 'primary' color should be used for accent backgrounds or highlight areas, such as side panels or feature blocks, to add calm emphasis. Text should primarily use 'darkText' for maximum readability on all backgrounds. Buttons and interactive elements should use 'buttonBorder' for outlines and text to maintain a minimal and refined look. The 'contentBlockBackground' can be used for subtle backgrounds behind text or graphics to enhance hierarchy and focus. Combining 'primary' with 'primaryForeground' ensures accessible contrast for headings or callouts, while 'secondary' with 'secondaryForeground' supports body text and secondary content. Overall, colors are balanced to maintain a professional and approachable atmosphere with sufficient contrast for accessibility.",
+          "paletteAccessibilityNotes": "The 'primary' color paired with 'primaryForeground' meets WCAG AA standards for large text and UI elements, ensuring readability and accessibility. The 'secondary' color with 'secondaryForeground' also meets WCAG AA contrast ratios for body text and secondary content. The 'darkText' color on 'background' and 'secondary' backgrounds provides strong contrast for all text elements. Button borders and text using 'buttonBorder' on 'secondary' or 'background' maintain clear visibility and interactive affordance. Overall, the palette supports accessible typography and UI components across the site."
+        },
+        "typography": {
+          "headings": {
+            "font": {
+              "role": "Primary Heading Font",
+              "fontFamily": "bitter",
+              "fontJustification": ""
+            },
+            "headingsSimilarFonts": [
+              "playfair display",
+              "cormorantgaramond",
+              "raleway"
+            ],
+            "headingsUsageGuide": "Use the 'bitter' font for all primary headings to establish a clear hierarchy and refined tone. Headings should be sized prominently with ample line height and letter spacing to enhance readability and elegance. Pair headings with body text fonts that complement serif styles to maintain visual harmony. Use the 'primary' or 'darkText' colors for headings to ensure strong contrast against backgrounds. Avoid overly tight letter spacing to preserve the font's classic character. Headings can be spaced generously from body text to create a balanced and airy layout.",
+            "headingsAccessibilityNotes": "Headings in 'bitter' font with 'primaryForeground' or 'darkText' colors on 'primary' or 'background' colors meet WCAG AA contrast standards for all sizes, ensuring clear readability and accessibility."
+          },
+          "paragraphs": {
+            "font": {
+              "role": "Main Body Text Font",
+              "fontFamily": "madefor-display",
+              "fontJustification": ""
+            },
+            "paragraphsSimilarFonts": [
+              "raleway",
+              "playfair display",
+              "cormorantgaramond"
+            ],
+            "paragraphsUsageGuide": "Use the 'bitter' font for body text to maintain consistency and a professional appearance. Body text should be sized for comfortable reading with appropriate line height and letter spacing. Use 'darkText' or 'primaryForeground' colors for body text on 'secondary' or 'background' colors to ensure legibility. Maintain sufficient spacing between paragraphs and other elements to avoid clutter. Pair body text with serif headings for a cohesive editorial style. Avoid using body text in all caps or overly decorative styles to preserve clarity.",
+            "paragraphsAccessibilityNotes": "Body text in 'bitter' font with 'darkText' or 'primaryForeground' colors on 'secondary' or 'background' colors meets WCAG AA contrast requirements for normal and large text, supporting accessibility."
+          },
+          "welcomeSectionTypography": {
+            "placement": "Weighted Quadrant",
+            "implementation": "The welcome section uses a weighted quadrant layout where the left quadrant is dedicated to large, bold heading text aligned top-left, creating a strong visual anchor. The right quadrant features an abstract geometric graphic that balances the composition. This asymmetrical but balanced placement draws the eye naturally from text to image, emphasizing the message while maintaining visual interest. Generous white space surrounds the elements, enhancing clarity and focus. Typography here is large and prominent, using the 'bitter' font for headings with ample line height and letter spacing to convey authority and sophistication."
+          },
+          "fontSizes": [
+            {
+              "name": "xs",
+              "size": "0.75rem",
+              "lineHeight": "1.25",
+              "letterSpacing": "0.02em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "sm",
+              "size": "0.875rem",
+              "lineHeight": "1.35",
+              "letterSpacing": "0.02em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "base",
+              "size": "1rem",
+              "lineHeight": "1.5",
+              "letterSpacing": "0.025em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "lg",
+              "size": "1.125rem",
+              "lineHeight": "1.5",
+              "letterSpacing": "0.025em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "xl",
+              "size": "1.25rem",
+              "lineHeight": "1.5",
+              "letterSpacing": "0.02em",
+              "fontWeight": "600"
+            },
+            {
+              "name": "2xl",
+              "size": "1.5rem",
+              "lineHeight": "1.4",
+              "letterSpacing": "0.015em",
+              "fontWeight": "600"
+            },
+            {
+              "name": "3xl",
+              "size": "1.875rem",
+              "lineHeight": "1.3",
+              "letterSpacing": "0em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "4xl",
+              "size": "2.25rem",
+              "lineHeight": "1.2",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "5xl",
+              "size": "3rem",
+              "lineHeight": "1.1",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "6xl",
+              "size": "3.75rem",
+              "lineHeight": "1.1",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "800"
+            },
+            {
+              "name": "7xl",
+              "size": "4.5rem",
+              "lineHeight": "1.05",
+              "letterSpacing": "-0.025em",
+              "fontWeight": "800"
+            },
+            {
+              "name": "8xl",
+              "size": "6rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "900"
+            },
+            {
+              "name": "9xl",
+              "size": "8rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.035em",
+              "fontWeight": "900"
+            }
+          ]
+        },
+        "layout": {
+          "layoutDna": {
+            "densitySpectrum": "Balanced",
+            "contrastSpectrum": "Subtle",
+            "gridAlignmentSpectrum": "Strict Grid",
+            "negativeSpaceUsage": "Generous",
+            "textVsImageEmphasis": "Balanced",
+            "complexitySpectrum": "Simple & Clean"
+          },
+          "grid": {
+            "compositionApproach": "Two-column grid with alternating content blocks",
+            "spacing": {
+              "columns": "12-column grid",
+              "rows": "Defined content rows",
+              "gaps": "Consistent medium gaps"
+            },
+            "margins": "Generous page margins",
+            "padding": "Consistent padding within containers"
+          }
+        },
+        "components": {
+          "containers": "Containers use subtle background color blocks such as 'primary' and 'secondary' to visually separate content areas. They maintain generous padding and margin to ensure content clarity and breathing room. Borders are minimal or absent, relying on color contrast for separation.",
+          "images": "Images or graphics are treated as abstract geometric dot-matrix style shapes with monochromatic or muted pastel colors. They integrate seamlessly into the layout as side or background elements, maintaining the minimal and professional aesthetic.",
+          "buttons": "Buttons are minimal with thin borders using 'buttonBorder' color and transparent backgrounds. Text inside buttons uses 'darkText' for readability. Hover states may invert colors subtly or increase border weight to indicate interactivity without disrupting the clean design."
+        },
+        "graphicElements": {
+          "icons": "Icons are minimal line-based designs in 'darkText' or 'buttonBorder' colors, consistent with the overall minimal and professional style.",
+          "illustrations": "Illustrations are abstract, geometric, and pixelated or dot-matrix style, using monochromatic or muted pastel colors to reinforce the AI and technology theme subtly.",
+          "stickers": "No stickers or badges are present; the design avoids decorative elements to maintain a clean and professional look."
+        }
+      },
+      "originImagesUrls": [
+        "https://wixmp-fe53c9ff592a4da924211f23.wixmp.com/uploads/1752391231198-Screenshot%202025-07-13%20at%209.59.22.png"
+      ]
+    },
+    {
+      "presetId": "479a0a91-c312-4930-bb5e-c06bdccb87cb",
+      "brandIdentity": {
+        "designSummary": "This brand design embraces a modern, minimalistic aesthetic characterized by a high-contrast black and white base palette punctuated by a vivid neon yellow accent. The layout is grid-based and modular, providing clear content separation and generous white space that enhances readability and visual hierarchy. Typography plays a central role, featuring bold, geometric sans-serif fonts with a clean and slightly technical feel, used in large uppercase headings and medium-weight body text. The neon yellow accent color is strategically applied to navigation backgrounds, call-to-action blocks, and highlighted sections, creating energetic focal points without overwhelming the design. UI components are minimal and functional, with simple black text and icons ensuring clarity and accessibility. Overall, the design conveys professionalism, modernity, and creative vibrancy, suitable for contemporary cultural institutions or brands seeking a bold yet clean visual identity.",
+        "toneOfVoice": "Bold, modern, professional, and creative with a clear and confident personality.",
+        "tones": [
+          "bold",
+          "modern",
+          "minimal",
+          "energetic",
+          "professional",
+          "clean",
+          "accessible",
+          "creative",
+          "confident",
+          "structured"
+        ],
+        "designStyle": {
+          "primaryStyle": [
+            "Minimalism",
+            "Modernism"
+          ],
+          "supportingStyles": [
+            "Modular Design",
+            "High Contrast",
+            "Geometric Typography"
+          ]
+        },
+        "palette": {
+          "colors": {
+            "primary": "#000000",
+            "primaryForeground": "#FFFFFF",
+            "secondary": "#FFFFFF",
+            "secondaryForeground": "#000000",
+            "background": "#FFFFFF",
+            "customColors": [
+              {
+                "name": "neonaccent",
+                "value": "#E6FF00"
+              },
+              {
+                "name": "foreground",
+                "value": "#000000"
+              },
+              {
+                "name": "destructive",
+                "value": "#DF3131"
+              },
+              {
+                "name": "destructiveforeground",
+                "value": "#FFFFFF"
+              }
+            ]
+          },
+          "paletteUsageGuide": "Use the 'primary' color predominantly for text, icons, and key UI elements on light backgrounds to ensure maximum readability. The 'secondary' color serves as the main background, providing a clean and open canvas. The 'neonAccent' color is reserved for highlighting important interactive elements such as navigation bars, call-to-action blocks, and featured content backgrounds, always paired with 'primary' for text to maintain strong contrast. Avoid using 'neonAccent' for text to preserve legibility. The 'primaryForeground' and 'secondaryForeground' colors ensure text and icons stand out clearly against their respective backgrounds. This palette balances high contrast with vibrant energy, supporting accessibility and user engagement.",
+          "paletteAccessibilityNotes": "The combination of 'primary' text on 'secondary' background meets WCAG AA and AAA contrast standards for normal and large text. The 'neonAccent' background with 'primary' text also meets WCAG AA contrast requirements, ensuring readability for call-to-action areas. Black text on white background and vice versa provide optimal contrast. Care should be taken to avoid using 'neonAccent' for small text or low contrast elements to maintain accessibility compliance."
+        },
+        "typography": {
+          "headings": {
+            "font": {
+              "role": "Primary Heading Font",
+              "fontFamily": "barlow-medium",
+              "fontJustification": ""
+            },
+            "headingsSimilarFonts": [
+              "montserrat",
+              "oswald",
+              "avenir-lt-w01_85-heavy1475544"
+            ],
+            "headingsUsageGuide": "Use the heading font in uppercase or sentence case with large sizes to create a commanding presence. Pair headings with the paragraph font to maintain readability and balance. Maintain ample spacing around headings to enhance clarity. Use 'primary' color for headings on light backgrounds and 'primaryForeground' on dark backgrounds. Avoid using the neonAccent color for headings to preserve legibility.",
+            "headingsAccessibilityNotes": "Headings in 'primary' color on 'secondary' background meet WCAG AA and AAA contrast standards. Large font sizes further improve accessibility."
+          },
+          "paragraphs": {
+            "font": {
+              "role": "Main Body Text Font",
+              "fontFamily": "barlow-extralight",
+              "fontJustification": ""
+            },
+            "paragraphsSimilarFonts": [
+              "open sans",
+              "poppins-v2",
+              "nunito sans"
+            ],
+            "paragraphsUsageGuide": "Use the paragraph font for body text, captions, and smaller UI elements. Maintain consistent line height and letter spacing for readability. Use 'primary' color for text on 'secondary' backgrounds and 'primaryForeground' on dark backgrounds. Avoid using neonAccent for body text to ensure contrast and legibility.",
+            "paragraphsAccessibilityNotes": "Body text in 'primary' color on 'secondary' background meets WCAG AA contrast standards for normal text sizes. Larger text sizes meet AAA standards."
+          },
+          "welcomeSectionTypography": {
+            "placement": "Top-Third Anchor",
+            "implementation": "The welcome section uses large, bold headings anchored in the top third of the viewport, creating immediate visual impact. The text is left-aligned with generous white space around it, emphasizing clarity and focus. The neonAccent color is used as a background highlight behind key calls to action, contrasting with black text for readability. This placement draws the user's eye naturally from the top navigation down into the content."
+          },
+          "fontSizes": [
+            {
+              "name": "xs",
+              "size": "0.75rem",
+              "lineHeight": "1.2",
+              "letterSpacing": "0.02em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "sm",
+              "size": "0.875rem",
+              "lineHeight": "1.3",
+              "letterSpacing": "0.02em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "base",
+              "size": "1rem",
+              "lineHeight": "1.5",
+              "letterSpacing": "0.02em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "lg",
+              "size": "1.125rem",
+              "lineHeight": "1.5",
+              "letterSpacing": "0.01em",
+              "fontWeight": "500"
+            },
+            {
+              "name": "xl",
+              "size": "1.25rem",
+              "lineHeight": "1.5",
+              "letterSpacing": "0em",
+              "fontWeight": "600"
+            },
+            {
+              "name": "2xl",
+              "size": "1.5rem",
+              "lineHeight": "1.4",
+              "letterSpacing": "0em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "3xl",
+              "size": "1.875rem",
+              "lineHeight": "1.3",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "4xl",
+              "size": "2.25rem",
+              "lineHeight": "1.2",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "800"
+            },
+            {
+              "name": "5xl",
+              "size": "3rem",
+              "lineHeight": "1.1",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "900"
+            },
+            {
+              "name": "6xl",
+              "size": "3.75rem",
+              "lineHeight": "1.1",
+              "letterSpacing": "-0.04em",
+              "fontWeight": "900"
+            },
+            {
+              "name": "7xl",
+              "size": "4.5rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.05em",
+              "fontWeight": "900"
+            },
+            {
+              "name": "8xl",
+              "size": "6rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.06em",
+              "fontWeight": "900"
+            },
+            {
+              "name": "9xl",
+              "size": "8rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.07em",
+              "fontWeight": "900"
+            }
+          ]
+        },
+        "layout": {
+          "layoutDna": {
+            "densitySpectrum": "Balanced",
+            "contrastSpectrum": "High-Contrast",
+            "gridAlignmentSpectrum": "Strict Grid",
+            "negativeSpaceUsage": "Generous",
+            "textVsImageEmphasis": "Balanced",
+            "complexitySpectrum": "Simple & Clean"
+          },
+          "grid": {
+            "compositionApproach": "Modular",
+            "spacing": {
+              "columns": "12-column grid",
+              "rows": "Defined content rows",
+              "gaps": "Consistent medium gaps"
+            },
+            "margins": "Generous page margins",
+            "padding": "Consistent padding within containers"
+          }
+        },
+        "components": {
+          "containers": "Containers use white or neonAccent backgrounds with clear boundaries defined by spacing rather than borders. They maintain consistent padding and margin to separate content blocks, supporting a modular and clean layout. The neonAccent container backgrounds highlight featured content or calls to action, always paired with black text for contrast.",
+          "images": "Images are presented in clean rectangular frames with no borders or shadows, maintaining a minimal and modern look. They are spaced generously from text and other elements to avoid clutter and maintain visual balance.",
+          "buttons": "Buttons are minimal and functional, typically black with white text or white with black text depending on background context. The 'Get tickets' button uses a black background with white text for prominence. Links are often underlined black text on white or neonAccent backgrounds, maintaining clarity and accessibility."
+        },
+        "graphicElements": {
+          "icons": "Icons are simple, monochromatic black line or solid shapes consistent with the minimalistic style. They are used sparingly in navigation and UI controls to support usability without visual clutter.",
+          "illustrations": "No decorative illustrations are present; the design relies on photography and abstract art images for visual interest.",
+          "stickers": "No sticker or badge style elements are used; emphasis is created through color blocks and typography."
+        }
+      },
+      "originImagesUrls": [
+        "https://wixmp-fe53c9ff592a4da924211f23.wixmp.com/uploads/1752423213959-Screenshot%202025-07-13%20at%2019.12.57.png"
+      ]
+    }
+  ],
+  "brandBook": {
+    "tones": [
+      "Premium",
+      "Exclusive",
+      "Resort-style",
+      "Peaceful",
+      "Luxurious"
+    ],
+    "designStyle": {
+      "primaryStyle": [
+        "Elegant",
+        "Minimalist"
+      ],
+      "supportingStyles": [
+        "Luxury",
+        "Resort-style"
+      ]
+    },
+    "toneOfVoice": "Elegant, sophisticated, and trustworthy.",
+    "components": {
+      "images": "Layout Role: Full-bleed background with a fixed position to create a window effect on scroll. | Gallery Type: Horizontal Scroll Filmstrip: A single-row gallery driven by horizontal scroll, where oversized items create a 'peek-a-boo' effect.",
+      "buttons": "Primary: background-color: #B8860B, color: #FFFFFF, border-radius: 8px, padding: 12px 24px. Secondary: background-color: transparent, color: #B8860B, border: 1px solid #B8860B, border-radius: 8px.",
+      "containers": "Method: Whitespace, Style: 80px vertical margin"
+    },
+    "typography": {
+      "headings": {
+        "font": {
+          "role": "headings",
+          "fontFamily": "cormorantgaramond",
+          "fontJustification": ""
+        },
+        "headingsUsageGuide": "Use Cormorant Garamond for all headings to establish a premium and elegant feel.",
+        "headingsSimilarFonts": [],
+        "headingsAccessibilityNotes": "Ensure sufficient contrast with background colors. Adjust letter spacing for optimal readability."
+      },
+      "fontSizes": [
+        {
+          "name": "xs",
+          "size": "0.75rem",
+          "letterSpacing": "0.05em",
+          "lineHeight": "1",
+          "fontWeight": "400"
+        },
+        {
+          "name": "sm",
+          "size": "0.875rem",
+          "letterSpacing": "0.025em",
+          "lineHeight": "1.25",
+          "fontWeight": "400"
+        },
+        {
+          "name": "base",
+          "size": "1rem",
+          "letterSpacing": "0em",
+          "lineHeight": "1.5",
+          "fontWeight": "400"
+        },
+        {
+          "name": "lg",
+          "size": "1.125rem",
+          "letterSpacing": "-0.025em",
+          "lineHeight": "1.75",
+          "fontWeight": "400"
+        },
+        {
+          "name": "xl",
+          "size": "1.25rem",
+          "letterSpacing": "-0.025em",
+          "lineHeight": "1.75",
+          "fontWeight": "500"
+        },
+        {
+          "name": "2xl",
+          "size": "1.5rem",
+          "letterSpacing": "-0.05em",
+          "lineHeight": "2",
+          "fontWeight": "500"
+        },
+        {
+          "name": "3xl",
+          "size": "1.875rem",
+          "letterSpacing": "-0.05em",
+          "lineHeight": "2.25",
+          "fontWeight": "600"
+        },
+        {
+          "name": "4xl",
+          "size": "2.25rem",
+          "letterSpacing": "-0.05em",
+          "lineHeight": "2.5",
+          "fontWeight": "600"
+        },
+        {
+          "name": "5xl",
+          "size": "3rem",
+          "letterSpacing": "-0.05em",
+          "lineHeight": "1",
+          "fontWeight": "700"
+        },
+        {
+          "name": "6xl",
+          "size": "3.75rem",
+          "letterSpacing": "-0.05em",
+          "lineHeight": "1",
+          "fontWeight": "700"
+        },
+        {
+          "name": "7xl",
+          "size": "4.5rem",
+          "letterSpacing": "-0.05em",
+          "lineHeight": "1",
+          "fontWeight": "700"
+        },
+        {
+          "name": "8xl",
+          "size": "6rem",
+          "letterSpacing": "-0.05em",
+          "lineHeight": "1",
+          "fontWeight": "700"
+        },
+        {
+          "name": "9xl",
+          "size": "8rem",
+          "letterSpacing": "-0.05em",
+          "lineHeight": "1",
+          "fontWeight": "700"
+        }
+      ],
+      "paragraphs": {
+        "font": {
+          "role": "paragraphs",
+          "fontFamily": "sora",
+          "fontJustification": ""
+        },
+        "paragraphsUsageGuide": "Use Sora for all body text to provide a clean and modern contrast to the serif headings.",
+        "paragraphsSimilarFonts": [],
+        "paragraphsAccessibilityNotes": "Ensure sufficient contrast with background colors. Use appropriate line height for readability."
+      },
+      "welcomeSectionTypography": {
+        "placement": "",
+        "implementation": ""
+      }
+    },
+    "originImagesUrls": [],
+    "layout": {
+      "grid": {
+        "margins": "80px",
+        "padding": "40px",
+        "spacing": {
+          "gaps": "Base unit: 8px. All grid gaps are 24px (3x base unit).",
+          "rows": "Auto",
+          "columns": "12"
+        },
+        "compositionApproach": "Strict 12-Column Grid with Typographic Hierarchy"
+      },
+      "layoutDna": {
+        "contrastSpectrum": "Subtle",
+        "densitySpectrum": "Sparse",
+        "textVsImageEmphasis": "Balanced",
+        "complexitySpectrum": "Simple",
+        "gridAlignmentSpectrum": "Symmetrical",
+        "negativeSpaceUsage": "Generous"
+      },
+      "heroSectionLayout": "**Parallax Resort Vista**\nComposition (Tailwind Spec): Full-screen container (h-screen relative overflow-hidden). Background image (absolute inset-0 w-full h-full object-cover). Headline 'Evora Estate by Godrej Properties' (absolute top-1/4 left-1/2 -translate-x-1/2 text-white text-6xl font-bold text-center). Subheadline 'Premium Resort-Style Plotted Development in Sector 40, Panipat' (absolute top-1/2 left-1/2 -translate-x-1/2 text-white text-2xl text-center). Buttons (absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-4).\nSignature Hook (Framer Motion Spec): Background image uses `useScroll` and `useTransform` to create a parallax effect, moving slower than the rest of the page. Micro-particles (small white circles) are animated with `useMotionValue` to float randomly across the background."
+    },
+    "graphicElements": {
+      "icons": "",
+      "stickers": "",
+      "illustrations": ""
+    },
+    "designSummary": "**The Gilded Resort: A Symphony of White, Gold, and Serene Minimalism**\n\nVisual Vision: Evora Estate's digital presence will evoke a sense of understated luxury and resort-style tranquility. The design will be clean, spacious, and elegant, using a white and gold gradient theme to create a premium feel. The layout will be meticulously planned to guide the user through a seamless journey, highlighting the key features and benefits of this exclusive plotted development.\n\n**Execution Blueprint:**\n1. The Foundation: A 12-column grid provides the underlying structure, ensuring a balanced and harmonious layout.\n2. Whitespace as a Design Element: Generous use of negative space will create a sense of calm and sophistication, allowing each element to breathe.\n3. Typography: A classic serif font for headings paired with a modern sans-serif for body text will establish a clear visual hierarchy and enhance readability.\n4. Subtle Animations: Micro-animations, fade-ins, and parallax effects will add a touch of dynamism and engagement without being overwhelming.\n5. Gold Accents: Gold borders, accents, and dividers will be used sparingly to highlight key elements and reinforce the premium theme.\n6. Convert-Focused Layout: Strategic placement of CTAs and a clear, concise presentation of information will drive conversions and generate leads.",
+    "palette": {
+      "colors": {
+        "background": "#F8F8FF",
+        "secondary": "#A9A9A9",
+        "customColors": [
+          {
+            "name": "goldAccent",
+            "value": "#FFD700"
+          },
+          {
+            "name": "lightGold",
+            "value": "#FAFAD2"
+          },
+          {
+            "name": "destructive",
+            "value": "#D32F2F"
+          },
+          {
+            "name": "destructive-foreground",
+            "value": "#FFFFFF"
+          }
+        ],
+        "foreground": "#000000",
+        "secondaryForeground": "#FFFFFF",
+        "primaryForeground": "#FFFFFF",
+        "primary": "#B8860B"
+      },
+      "paletteUsageGuide": "Use primary gold sparingly for key accents and interactive elements. Maintain a predominantly white and light gold background for a clean and luxurious feel.",
+      "paletteAccessibilityNotes": "Ensure sufficient contrast between text and background colors for readability. Use colorblindness simulators to verify accessibility."
+    }
+  },
+  "initialPrompt": "Create a high-end, ultra-premium real estate landing page for Evora Estate by Godrej Properties, offered exclusively by Realty X. The website must follow a white + gold gradient luxury theme, premium typography, smooth animations, micro-interactions, parallax visuals, hover effects, and modern minimal UI.\n\nUse ALL the content, sections, and image specifications EXACTLY as described below.\n\n🏡 PROJECT DETAILS (USE EXACTLY AS GIVEN)\nProject Overview\n\nProject Name: Evora Estate\nDeveloper: Godrej Properties\nOffered By: Realty X\nLocation: Sector 40, Panipat, Haryana (NH44 GT Road)\nProject Type: Premium Plotted Development\nTheme: Resort Living Style\nTotal Area: 43 Acres\nTotal Units: 750 Plots\nRERA Status: Approved & ready for certificate issuing\nRERA Number: RERA-PKL-1860-2025\n\nPricing\n\nStandard Price: ₹1,50,000/sq yd\nPre-Launch Price: ₹1,30,000/sq yd\nSavings: ₹20,000 per sq yd (13.33% discount)\nEOI Amount: ₹5,00,000\nPlot Sizes: 130–179 sq yd\n\nPre-Launch Timeline\n\nPre-launch sale: Dec 15–20, 2025\nBrochure available after pre-launch\nDiscount valid only before / during Dec 15–20\n\n📍 Location Highlights\n\nRight on NH44 (GT Road)\nExcellent Delhi NCR connectivity\nLocated in Village Badauli & Shimla Maulana\nFast access to Panipat city & Haryana’s major hubs\n\n🌿 USPs\n\nResort-style green living\nMaster-planned neighbourhood layout\nHuge 43-acre integrated township\n750 exclusive plotted units\nPrime NH44 connectivity\nGodrej brand trust\nFully RERA-approved\nStrong long-term investment potential\nIdeal for peaceful family living\n\n✨ DESIGN RULES (STRICT)\n\nWhite & Gold gradient background theme\nGold borders, accents, dividers\nMicro-animations, fade-ins, slide-ups\nParallax hero banner\nHover zoom on images\nGlassmorphic sticky navigation\nPremium serif + modern sans-serif combination\n\n📄 BUILD THE PAGE WITH THE FOLLOWING SECTIONS (IN ORDER)\n\nInclude content + AI-generated image requirements for every section.\n\n1️⃣ HERO SECTION (PARALLAX + LUXURY LOOK)\n\nText Content:\nHeadline: “Evora Estate by Godrej Properties”\nSubheadline: “Premium Resort-Style Plotted Development in Sector 40, Panipat”\nSecondary Line: “Launching at an Exclusive Pre-Launch Price – Limited 5-Day Window”\nCTAs: Book Pre-Launch Slot | Get Project Details\n\nImage Specification:\nUse a luxury resort-style township aerial view, high greenery, golden sunlight glow, wide landscape, modern plotting layout.\nInclude parallax motion.\n\nAnimations:\n\nSlow fade-in headline\nButton hover glow effect\nFloating micro-particles in background\n\n2️⃣ KEY HIGHLIGHTS SECTION (4 GOLD CARDS)\n\nContent:\n\n43 Acres Township\n750 Premium Plots\nResort-Style Living\nRERA Approved: RERA-PKL-1860-2025\n\nImage Specification:\nEach card icon should be gold, thin-line luxury icons (leaf, map outline, building grid, shield icon).\n\nAnimations:\n\nCard hover lift\nGold border glow on hover\n\n3️⃣ PRICING SECTION (COMPARISON + SAVINGS)\n\nContent:\n\nStandard Price: ₹1,50,000/sq yd\nPre-launch Price: ₹1,30,000/sq yd\nSavings: ₹20,000 per sq yd (13.33% OFF)\nEOI: ₹5,00,000\nPlot Sizes: 130–179 sq yd\n\nAdd a note: “Pre-launch pricing valid only till Dec 20, 2025.”\n\nImage Specification:\nBackground: soft white-gold gradient with gold sparkles.\nUse a side-by-side pricing comparison visual.\n\nAnimations:\n\nPrice drops animate from old price to new price\nSavings badge pulse animation\n\n4️⃣ LIFESTYLE / GALLERY SECTION\n\nContent:\nHeadline: “Experience Resort-Style Living”\nSubline: “Green open spaces, peaceful landscapes, and thoughtfully designed neighbourhoods.”\n\nImage Specification:\nUse luxury AI-generated images featuring:\n\nGreen park spaces\nWalking trails\nBeautiful landscaped zones\nAerial township renders\nClubhouse-inspired visuals\n\nAnimations:\n\nSmooth slider transitions\nHover zoom-in\nFade edges\n\n5️⃣ LOCATION ADVANTAGE SECTION\n\nContent:\nHeadline: “A Location That Connects You Everywhere”\n\nBullet Points:\n\nPrime NH44 GT Road access\n40 minutes to Karnal\n60–70 minutes to Delhi-NCR\nCentral Panipat connectivity\nSurrounded by established residential zones\n\nImage Specification:\n\nA gold-themed map illustration\nLocation pin with glowing gold ring\nNH44 highway highlight\n\nAnimations:\n\nMap zoom animation\nPin drop animation\n\n6️⃣ USPs SECTION (9 CARDS)\n\nContent:\nEach card should have a gold icon + text:\n\nResort-style green living\nMaster-planned neighbourhood layout\n43-acre township\n750 exclusive plots\nPrime expressway connectivity\nGodrej brand trust\nRERA-approved investment security\nStrong appreciation potential\nPerfect for peaceful family lifestyle\n\nImage Specification:\nUse minimal gold monoline icons only.\n\nAnimations:\n\nStaggered reveal animations\nSoft gold hover highlight\n\n7️⃣ PRE-LAUNCH COUNTDOWN SECTION\n\nContent:\nHeadline: “Pre-Launch: December 15–20, 2025”\nSubline: “Limited 5-day opportunity | Exclusive pricing | High-demand plots”\n\nAdd a live countdown timer.\n\nImage Specification:\n\nDark white-gold gradient background\nGold countdown numbers\n\nAnimations:\n\nTimer ticks\nGold pulse effect\n\n8️⃣ ABOUT DEVELOPER & CHANNEL PARTNER\n\nContent:\nAbout Godrej Properties:\n\nTrusted national developer\nAward-winning planning & sustainable design\nStrong track record in plotted developments\n\nAbout Realty X (Channel Partner):\n\nExclusive pre-launch partner for Evora Estate\nKnown for premium project curation\nTrusted by investors & families\n\nImage Specification:\n\nDeveloper logo section\nRealty X logo with gold outline\nClean white background\n\nAnimations:\n\nSoft fade-in logos\nGold underline hover\n\n9️⃣ LEAD FORM SECTION\n\nContent:\nHeadline: “Get Pre-Launch Access”\nSubline: “Limited slots | Best pricing guaranteed | Exclusive channel partner access”\n\nFields: Name, Phone, Email, WhatsApp Checkbox, Message\n\nCTA: Request a Call Back\n\nImage Specification:\n\nSoft gold blurred background\nForm border in gold fine line\n\nAnimations:\n\nForm glows slightly on focus\nCTA hover shine effect\n\n🔟 FOOTER SECTION\n\nContent:\n\nRERA Number: RERA-PKL-1860-2025\nDisclaimer text for marketing purposes\nRealty X contact details\n\nImage Specification:\n\nClean minimal footer\nGold dividers\n\n🎨 OVERALL DESIGN GUIDELINES\n\nWhite and gold gradient premium theme\nSmooth scroll transitions\nElegant spacing & minimalism\nAll images must be AI-generated in luxury/township/resort style\nHover interactions everywhere\nParallax and soft floating effects\nConvert-focused layout with strong CTAs\n\nGenerate the entire landing page EXACTLY with these sections, content, image specifications, animations, and luxury theme.",
+  "status": "READY",
+  "revision": "10",
+  "createdDate": "2025-12-09T04:42:31.575Z",
+  "updatedDate": "2025-12-09T04:42:55.465Z",
+  "attachments": {
+    "contentImagesUrls": [],
+    "inspirationImagesUrls": []
+  },
+  "selectedBrandingPresetId": "00000000-eca9-4ba3-9247-495ff705d71e",
+  "plan": "{\n  \"sections\": [\n    {\n      \"id\": \"overview\",\n      \"title\": \"## Overview\",\n      \"content\": \"This plan outlines a high-end, ultra-premium real estate landing page for Evora Estate by Godrej Properties, offered by Realty X. It features a luxury white and gold gradient theme with smooth animations, parallax visuals, and a modern minimal UI to showcase project details, pricing, location, USPs, and a lead capture form.\"\n    },\n    {\n      \"id\": \"key-features\",\n      \"title\": \"## Key features\",\n      \"content\": \"- **View Project Overview**: Displays essential project details like name, developer, location, and type.\\n- **View Pricing Information**: Shows standard, pre-launch pricing, savings, EOI amount, and plot sizes.\\n- **View Pre-Launch Timeline**: Details the limited window for pre-launch sales and pricing validity.\\n- **View Location Highlights**: Presents key advantages of the project's location.\\n- **View Project USPs**: Highlights the unique selling propositions of Evora Estate.\\n- **View Lifestyle Showcase**: Displays images and descriptions of resort-style living.\\n- **View Location Advantage**: Illustrates the strategic benefits of the project's location.\\n- **View Developer & Partner Info**: Provides information about Godrej Properties and Realty X.\\n- **Submit Lead Form**: Allows visitors to submit their details for pre-launch access and inquiries.\",\n      \"metadata\": [\n        { \"id\": \"view-project-overview\", \"name\": \"View Project Overview\" },\n        { \"id\": \"view-pricing-information\", \"name\": \"View Pricing Information\" },\n        { \"id\": \"view-pre-launch-timeline\", \"name\": \"View Pre-Launch Timeline\" },\n        { \"id\": \"view-location-highlights\", \"name\": \"View Location Highlights\" },\n        { \"id\": \"view-project-usps\", \"name\": \"View Project USPs\" },\n        { \"id\": \"view-lifestyle-showcase\", \"name\": \"View Lifestyle Showcase\" },\n        { \"id\": \"view-location-advantage\", \"name\": \"View Location Advantage\" },\n        { \"id\": \"view-developer-partner-info\", \"name\": \"View Developer & Partner Info\" },\n        { \"id\": \"submit-lead-form\", \"name\": \"Submit Lead Form\" }\n      ]\n    },\n    {\n      \"id\": \"structure\",\n      \"title\": \"## Structure\",\n      \"content\": \"- **Header (Reusable)**: Features a glassmorphic sticky navigation with the project name/logo and CTAs.\\n- **Footer (Reusable)**: Contains RERA number, disclaimer text, and Realty X contact details.\\n- **Homepage**: A single-page layout hosting all content sections in the specified order: Hero, Key Highlights, Pricing, Lifestyle/Gallery, Location Advantage, USPs, Pre-Launch Countdown, About Developer & Channel Partner, and Lead Form.\"\n    }\n  ],\n  \"apps\": [\n    {\n      \"id\": \"wix-cms\",\n      \"keyFeatures\": [\n        { \"id\": \"view-project-overview\", \"name\": \"View Project Overview\" },\n        { \"id\": \"view-pricing-information\", \"name\": \"View Pricing Information\" },\n        { \"id\": \"view-pre-launch-timeline\", \"name\": \"View Pre-Launch Timeline\" },\n        { \"id\": \"view-location-highlights\", \"name\": \"View Location Highlights\" },\n        { \"id\": \"view-project-usps\", \"name\": \"View Project USPs\" },\n        { \"id\": \"view-lifestyle-showcase\", \"name\": \"View Lifestyle Showcase\" },\n        { \"id\": \"view-location-advantage\", \"name\": \"View Location Advantage\" },\n        { \"id\": \"view-developer-partner-info\", \"name\": \"View Developer & Partner Info\" },\n        { \"id\": \"submit-lead-form\", \"name\": \"Submit Lead Form\" }\n      ]\n    }\n  ],\n  \"version\": \"3.0\"\n}",
+  "designerData": {
+    "designerId": "45d286a9-c2d3-4558-807d-a3f26205dc86",
+    "designerName": "Elise",
+    "selectionMethod": "UNSELECTED"
+  }
+}
