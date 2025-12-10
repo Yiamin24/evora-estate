@@ -224,14 +224,24 @@ export default function HomePage() {
 
         <div className="relative z-20 container mx-auto px-6 text-center">
           <AnimatedElement>
+            <div className="inline-block mb-8">
+              <Image
+                src="https://static.wixstatic.com/media/cef78c_fe29b21b51734c78b8611d7cdf793bf8~mv2.png?id=godrej-logo"
+                alt="Godrej Evora Estate logo"
+                className="h-20 md:h-28 w-auto mx-auto"
+              />
+            </div>
+          </AnimatedElement>
+
+          <AnimatedElement delay={100}>
             <div className="inline-block mb-6 px-4 py-1 border border-white/30 rounded-full backdrop-blur-sm bg-white/10">
               <span className="text-white/90 text-sm tracking-widest uppercase font-medium">RERA Approved: RERA-PKL-1860-2025</span>
             </div>
           </AnimatedElement>
 
-          <AnimatedElement delay={200}>
+          <AnimatedElement delay={300}>
             <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-4 drop-shadow-2xl tracking-tight">
-              Evora Estate
+              Godrej Evora Estate
             </h1>
           </AnimatedElement>
 
