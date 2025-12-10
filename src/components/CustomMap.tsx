@@ -75,9 +75,9 @@ const CustomMap: React.FC = () => {
   const activeLocation = locations.find((loc) => loc.id === activeMarker);
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full min-h-[320px]">
       {/* Map Background */}
-      <div className="absolute inset-0 rounded-3xl overflow-hidden bg-gradient-to-br from-light-gold/40 via-white to-light-gold/20">
+      <div className="absolute inset-0 rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-br from-light-gold/40 via-white to-light-gold/20">
         {/* Decorative Grid Pattern */}
         <svg
           className="absolute inset-0 w-full h-full opacity-10"
@@ -165,7 +165,7 @@ const CustomMap: React.FC = () => {
 
       {/* Info Panel */}
       <motion.div
-        className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-6 border border-primary/20"
+        className="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 right-3 sm:right-6 bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-xl p-3 sm:p-6 border border-primary/20"
         layout
       >
         <motion.div
@@ -176,25 +176,25 @@ const CustomMap: React.FC = () => {
           transition={{ duration: 0.3 }}
         >
           {activeLocation && (
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center ${getMarkerColor(activeLocation.type)}`}>
+            <div className="space-y-2 sm:space-y-3">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center ${getMarkerColor(activeLocation.type)}`}>
                   {getMarkerIcon(activeLocation.type)}
                 </div>
                 <div>
-                  <h3 className="font-heading text-xl font-bold text-primary">{activeLocation.name}</h3>
-                  <p className="text-sm text-foreground/60">{activeLocation.distance}</p>
+                  <h3 className="font-heading text-base sm:text-xl font-bold text-primary">{activeLocation.name}</h3>
+                  <p className="text-xs sm:text-sm text-foreground/60">{activeLocation.distance}</p>
                 </div>
               </div>
-              <p className="text-sm text-foreground/70 leading-relaxed">{activeLocation.description}</p>
+              <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">{activeLocation.description}</p>
 
               {/* Location Tabs */}
-              <div className="flex gap-2 pt-2">
+              <div className="flex gap-1 sm:gap-2 pt-2 flex-wrap">
                 {locations.map((loc) => (
                   <motion.button
                     key={loc.id}
                     onClick={() => setActiveMarker(loc.id)}
-                    className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+                    className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs font-medium transition-all ${
                       activeMarker === loc.id
                         ? 'bg-primary text-white shadow-md'
                         : 'bg-gray-100 text-foreground/70 hover:bg-gray-200'
@@ -205,7 +205,7 @@ const CustomMap: React.FC = () => {
                     {loc.type === 'project' && '🏢'}
                     {loc.type === 'school' && '🎓'}
                     {loc.type === 'hospital' && '🏥'}
-                    <span className="ml-1">{loc.name.split(' ')[0]}</span>
+                    <span className="ml-1 hidden sm:inline">{loc.name.split(' ')[0]}</span>
                   </motion.button>
                 ))}
               </div>
@@ -216,17 +216,17 @@ const CustomMap: React.FC = () => {
 
       {/* Legend */}
       <motion.div
-        className="absolute top-6 right-6 bg-white/95 backdrop-blur-md rounded-2xl shadow-lg p-4 border border-primary/20"
+        className="absolute top-3 sm:top-6 right-3 sm:right-6 bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-lg p-2 sm:p-4 border border-primary/20 max-w-[140px] sm:max-w-none"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.2 }}
       >
-        <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-3">Nearby Amenities</p>
-        <div className="space-y-2">
+        <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-2 sm:mb-3">Nearby Amenities</p>
+        <div className="space-y-1 sm:space-y-2">
           {locations.map((loc) => (
             <div key={loc.id} className="flex items-center gap-2">
-              <div className={`w-3 h-3 rounded-full ${getMarkerColor(loc.type)}`} />
-              <span className="text-xs text-foreground/70">{loc.name}</span>
+              <div className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${getMarkerColor(loc.type)}`} />
+              <span className="text-xs text-foreground/70 truncate">{loc.name}</span>
             </div>
           ))}
         </div>

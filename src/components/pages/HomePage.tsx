@@ -578,7 +578,7 @@ export default function HomePage() {
       {/* 5️⃣ LOCATION ADVANTAGE SECTION */}
       <section id="location" className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-gold-accent/5">
         <div className="container mx-auto px-4 sm:px-6 max-w-[120rem]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-start lg:items-center">
             <AnimatedElement>
               <h2 className="font-heading text-3xl sm:text-5xl md:text-6xl font-bold text-primary mb-6 md:mb-8 leading-tight">
                 {locationAdvantages?.sectionHeadline || 'A Location That Connects You Everywhere'}
@@ -608,7 +608,7 @@ export default function HomePage() {
             </AnimatedElement>
 
             <AnimatedElement delay={200}>
-              <div className="relative w-full h-64 sm:h-96 md:h-[500px] lg:h-[600px]">
+              <div className="relative w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-3xl overflow-hidden">
                 <CustomMap />
               </div>
             </AnimatedElement>
