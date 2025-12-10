@@ -608,7 +608,7 @@ export default function HomePage() {
             </AnimatedElement>
 
             <AnimatedElement delay={200}>
-              <div className="relative w-full h-80 sm:h-96 md:h-[500px] lg:h-[600px] rounded-3xl overflow-hidden">
+              <div className="w-full">
                 <CustomMap />
               </div>
             </AnimatedElement>
