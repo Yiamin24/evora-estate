@@ -466,7 +466,7 @@ export default function HomePage() {
                   </div>
                   <div className="flex justify-between items-center flex-wrap gap-1 sm:gap-2">
                     <span className="text-white/80 text-xs sm:text-base">Plot Sizes</span>
-                    <span className="text-sm sm:text-xl font-bold">130 – 179 sq yd</span>
+                    <span className="text-sm sm:text-xl font-bold">130-180 sq yd</span>
                   </div>
                 </div>
 
