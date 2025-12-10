@@ -249,13 +249,13 @@ export default function HomePage() {
           </AnimatedElement>
 
           <AnimatedElement delay={300}>
-            <h1 className="font-heading text-3xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-2 sm:mb-4 tracking-tight leading-tight" style={{ textShadow: '0 8px 24px rgba(0, 0, 0, 0.95), 0 4px 8px rgba(0, 0, 0, 0.8)' }}>
+            <h1 className="font-heading text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-3 sm:mb-4 tracking-tight leading-tight" style={{ textShadow: '0 8px 24px rgba(0, 0, 0, 0.95), 0 4px 8px rgba(0, 0, 0, 0.8)' }}>
               Godrej Evora Estate
             </h1>
           </AnimatedElement>
 
           <AnimatedElement delay={400}>
-            <p className="text-xs sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-6 sm:mb-12 leading-relaxed font-light px-2" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.6)' }}>
+            <p className="text-sm sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed font-light px-2" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.6)' }}>
               Premium Resort-Style Plotted Development in Sector 40, Panipat. <br className="hidden md:block" />
               <span className="text-light-gold font-medium" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 0.7)' }}>Launching at an Exclusive Pre-Launch Price – Limited 5-Day Window</span>
             </p>
