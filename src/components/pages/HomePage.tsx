@@ -180,6 +180,15 @@ export default function HomePage() {
     setCurrentSlide((prev) => (prev - 1 + (lifestyleGallery.length || 6)) % (lifestyleGallery.length || 6));
   };
 
+  // --- USPs Carousel State (Mobile) ---
+  const [currentUSPSlide, setCurrentUSPSlide] = useState(0);
+  const nextUSPSlide = () => {
+    setCurrentUSPSlide((prev) => (prev + 1) % (projectUSPs.length || 9));
+  };
+  const prevUSPSlide = () => {
+    setCurrentUSPSlide((prev) => (prev - 1 + (projectUSPs.length || 9)) % (projectUSPs.length || 9));
+  };
+
   // --- Render ---
   return (
     <div className="min-h-screen bg-background font-paragraph text-foreground overflow-x-hidden selection:bg-primary/20 selection:text-primary">
@@ -637,233 +646,340 @@ export default function HomePage() {
             </div>
           </AnimatedElement>
 
-          {/* Enhanced Grid with Image-First Design */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-            {projectUSPs.length > 0 ? (
-              projectUSPs.map((usp, i) => (
-                <AnimatedElement key={usp._id} delay={i * 80}>
-                  <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: i * 0.08 }}
-                    className="group relative h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer min-h-[300px] sm:min-h-[400px]"
-                  >
-                    {/* Large Background Image */}
-                    {usp.uspIcon ? (
+          {/* Desktop Grid (lg and above) + Mobile Carousel (below lg) */}
+          <div className="relative">
+            {/* Desktop Grid - Hidden on mobile */}
+            <div className="hidden lg:grid grid-cols-3 gap-8">
+              {projectUSPs.length > 0 ? (
+                projectUSPs.map((usp, i) => (
+                  <AnimatedElement key={usp._id} delay={i * 80}>
+                    <motion.div
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: i * 0.08 }}
+                      className="group relative h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer min-h-[400px]"
+                    >
+                      {/* Large Background Image */}
+                      {usp.uspIcon ? (
+                        <motion.div
+                          className="absolute inset-0"
+                          whileHover={{ scale: 1.1 }}
+                          transition={{ duration: 0.6 }}
+                        >
+                          <Image 
+                            src={usp.uspIcon} 
+                            alt={usp.uspText || ''} 
+                            className="w-full h-full object-cover"
+                          />
+                        </motion.div>
+                      ) : (
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-gold-accent/10" />
+                      )}
+
+                      {/* Gradient Overlay */}
+                      <motion.div 
+                        className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"
+                        whileHover={{ opacity: 0.95 }}
+                        transition={{ duration: 0.3 }}
+                      />
+
+                      {/* Content Overlay */}
+                      <div className="relative h-full flex flex-col justify-end p-6 md:p-8 z-10">
+                        {/* Icon with Animation */}
+                        <motion.div
+                          initial={{ scale: 0, opacity: 0 }}
+                          whileInView={{ scale: 1, opacity: 1 }}
+                          transition={{ duration: 0.6, delay: i * 0.08 + 0.2 }}
+                          className="mb-4 w-12 h-12 rounded-full bg-gold-accent/20 flex items-center justify-center group-hover:bg-gold-accent/40 transition-colors duration-300"
+                        >
+                          <div className="text-gold-accent">
+                            <Star className="w-6 h-6" />
+                          </div>
+                        </motion.div>
+
+                        {/* Animated Title */}
+                        <motion.h3 
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: i * 0.08 + 0.1 }}
+                          className="font-heading text-2xl md:text-3xl font-bold text-white mb-3 leading-tight line-clamp-2"
+                        >
+                          {usp.uspText}
+                        </motion.h3>
+
+                        {/* Animated Description */}
+                        <motion.p 
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: i * 0.08 + 0.2 }}
+                          className="text-white/90 text-base leading-relaxed line-clamp-2"
+                        >
+                          {usp.shortDescription}
+                        </motion.p>
+
+                        {/* Animated Accent Line */}
+                        <motion.div
+                          initial={{ scaleX: 0 }}
+                          whileInView={{ scaleX: 1 }}
+                          transition={{ duration: 0.8, delay: i * 0.08 + 0.3 }}
+                          className="mt-4 h-1 w-12 bg-gold-accent origin-left"
+                        />
+                      </div>
+
+                      {/* Hover Glow Effect */}
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-gold-accent/0 via-gold-accent/10 to-gold-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        whileHover={{ opacity: 0.2 }}
+                      />
+                    </motion.div>
+                  </AnimatedElement>
+                ))
+              ) : (
+                // Fallback USPs with Enhanced Design
+                [
+                  { 
+                    icon: <Leaf />, 
+                    title: 'Resort-style green living', 
+                    desc: 'Lush landscapes and open spaces designed for your wellness',
+                    image: 'https://static.wixstatic.com/media/cef78c_9e93d53231df40feabb3d7106b15637e~mv2.png?id=usp-green'
+                  },
+                  { 
+                    icon: <Grid3x3 />, 
+                    title: 'Master-planned layout', 
+                    desc: 'Thoughtfully designed community with premium amenities',
+                    image: 'https://static.wixstatic.com/media/cef78c_18f05f7fe37d4a04af69d54d4637c019~mv2.png?id=usp-layout'
+                  },
+                  { 
+                    icon: <Building2 />, 
+                    title: '43-acre township', 
+                    desc: 'Expansive integrated development with world-class facilities',
+                    image: 'https://static.wixstatic.com/media/cef78c_0294cbf2be46425299f4ed4acd1dea82~mv2.png?id=usp-township'
+                  },
+                  { 
+                    icon: <Home />, 
+                    title: '750 exclusive plots', 
+                    desc: 'Limited premium inventory with prime locations',
+                    image: 'https://static.wixstatic.com/media/cef78c_18f05f7fe37d4a04af69d54d4637c019~mv2.png?id=usp-plots'
+                  },
+                  { 
+                    icon: <MapPin />, 
+                    title: 'Prime connectivity', 
+                    desc: 'NH44 GT Road access with excellent regional links',
+                    image: 'https://static.wixstatic.com/media/cef78c_4eb8389129164d20ae5f84d56138b12c~mv2.png?id=usp-location'
+                  },
+                  { 
+                    icon: <Award />, 
+                    title: 'Godrej brand trust', 
+                    desc: 'Legacy of excellence and premium quality standards',
+                    image: 'https://static.wixstatic.com/media/cef78c_0294cbf2be46425299f4ed4acd1dea82~mv2.png?id=usp-godrej'
+                  },
+                  { 
+                    icon: <Shield />, 
+                    title: 'RERA-approved', 
+                    desc: 'Investment security with regulatory compliance',
+                    image: 'https://static.wixstatic.com/media/cef78c_9e93d53231df40feabb3d7106b15637e~mv2.png?id=usp-rera'
+                  },
+                  { 
+                    icon: <TrendingUp />, 
+                    title: 'Strong appreciation', 
+                    desc: 'Prime location advantage with growth potential',
+                    image: 'https://static.wixstatic.com/media/cef78c_18f05f7fe37d4a04af69d54d4637c019~mv2.png?id=usp-growth'
+                  },
+                  { 
+                    icon: <Users />, 
+                    title: 'Peaceful family lifestyle', 
+                    desc: 'Safe and serene environment for your loved ones',
+                    image: 'https://static.wixstatic.com/media/cef78c_0294cbf2be46425299f4ed4acd1dea82~mv2.png?id=usp-family'
+                  },
+                ].map((item, i) => (
+                  <AnimatedElement key={i} delay={i * 80}>
+                    <motion.div
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: i * 0.08 }}
+                      className="group relative h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer min-h-[400px]"
+                    >
+                      {/* Large Background Image */}
                       <motion.div
                         className="absolute inset-0"
                         whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.6 }}
                       >
                         <Image 
-                          src={usp.uspIcon} 
-                          alt={usp.uspText || ''} 
+                          src={item.image} 
+                          alt={item.title} 
                           className="w-full h-full object-cover"
                         />
                       </motion.div>
-                    ) : (
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-gold-accent/10" />
-                    )}
 
-                    {/* Gradient Overlay */}
-                    <motion.div 
-                      className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"
-                      whileHover={{ opacity: 0.95 }}
-                      transition={{ duration: 0.3 }}
-                    />
-
-                    {/* Content Overlay */}
-                    <div className="relative h-full flex flex-col justify-end p-4 sm:p-6 md:p-8 z-10">
-                      {/* Icon with Animation */}
-                      <motion.div
-                        initial={{ scale: 0, opacity: 0 }}
-                        whileInView={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 0.6, delay: i * 0.08 + 0.2 }}
-                        className="mb-3 sm:mb-4 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gold-accent/20 flex items-center justify-center group-hover:bg-gold-accent/40 transition-colors duration-300"
-                      >
-                        <div className="text-gold-accent">
-                          {usp.uspIcon ? (
-                            <Star className="w-5 h-5 sm:w-6 sm:h-6" />
-                          ) : (
-                            <Star className="w-5 h-5 sm:w-6 sm:h-6" />
-                          )}
-                        </div>
-                      </motion.div>
-
-                      {/* Animated Title */}
-                      <motion.h3 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: i * 0.08 + 0.1 }}
-                        className="font-heading text-lg sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-3 leading-tight line-clamp-2"
-                      >
-                        {usp.uspText}
-                      </motion.h3>
-
-                      {/* Animated Description */}
-                      <motion.p 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: i * 0.08 + 0.2 }}
-                        className="text-white/90 text-xs sm:text-base leading-relaxed line-clamp-2"
-                      >
-                        {usp.shortDescription}
-                      </motion.p>
-
-                      {/* Animated Accent Line */}
-                      <motion.div
-                        initial={{ scaleX: 0 }}
-                        whileInView={{ scaleX: 1 }}
-                        transition={{ duration: 0.8, delay: i * 0.08 + 0.3 }}
-                        className="mt-3 sm:mt-4 h-1 w-8 sm:w-12 bg-gold-accent origin-left"
+                      {/* Gradient Overlay */}
+                      <motion.div 
+                        className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"
+                        whileHover={{ opacity: 0.95 }}
+                        transition={{ duration: 0.3 }}
                       />
-                    </div>
 
-                    {/* Hover Glow Effect */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-gold-accent/0 via-gold-accent/10 to-gold-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      whileHover={{ opacity: 0.2 }}
-                    />
-                  </motion.div>
-                </AnimatedElement>
-              ))
-            ) : (
-              // Fallback USPs with Enhanced Design
-              [
-                { 
-                  icon: <Leaf />, 
-                  title: 'Resort-style green living', 
-                  desc: 'Lush landscapes and open spaces designed for your wellness',
-                  image: 'https://static.wixstatic.com/media/cef78c_9e93d53231df40feabb3d7106b15637e~mv2.png?id=usp-green'
-                },
-                { 
-                  icon: <Grid3x3 />, 
-                  title: 'Master-planned layout', 
-                  desc: 'Thoughtfully designed community with premium amenities',
-                  image: 'https://static.wixstatic.com/media/cef78c_18f05f7fe37d4a04af69d54d4637c019~mv2.png?id=usp-layout'
-                },
-                { 
-                  icon: <Building2 />, 
-                  title: '43-acre township', 
-                  desc: 'Expansive integrated development with world-class facilities',
-                  image: 'https://static.wixstatic.com/media/cef78c_0294cbf2be46425299f4ed4acd1dea82~mv2.png?id=usp-township'
-                },
-                { 
-                  icon: <Home />, 
-                  title: '750 exclusive plots', 
-                  desc: 'Limited premium inventory with prime locations',
-                  image: 'https://static.wixstatic.com/media/cef78c_18f05f7fe37d4a04af69d54d4637c019~mv2.png?id=usp-plots'
-                },
-                { 
-                  icon: <MapPin />, 
-                  title: 'Prime connectivity', 
-                  desc: 'NH44 GT Road access with excellent regional links',
-                  image: 'https://static.wixstatic.com/media/cef78c_4eb8389129164d20ae5f84d56138b12c~mv2.png?id=usp-location'
-                },
-                { 
-                  icon: <Award />, 
-                  title: 'Godrej brand trust', 
-                  desc: 'Legacy of excellence and premium quality standards',
-                  image: 'https://static.wixstatic.com/media/cef78c_0294cbf2be46425299f4ed4acd1dea82~mv2.png?id=usp-godrej'
-                },
-                { 
-                  icon: <Shield />, 
-                  title: 'RERA-approved', 
-                  desc: 'Investment security with regulatory compliance',
-                  image: 'https://static.wixstatic.com/media/cef78c_9e93d53231df40feabb3d7106b15637e~mv2.png?id=usp-rera'
-                },
-                { 
-                  icon: <TrendingUp />, 
-                  title: 'Strong appreciation', 
-                  desc: 'Prime location advantage with growth potential',
-                  image: 'https://static.wixstatic.com/media/cef78c_18f05f7fe37d4a04af69d54d4637c019~mv2.png?id=usp-growth'
-                },
-                { 
-                  icon: <Users />, 
-                  title: 'Peaceful family lifestyle', 
-                  desc: 'Safe and serene environment for your loved ones',
-                  image: 'https://static.wixstatic.com/media/cef78c_0294cbf2be46425299f4ed4acd1dea82~mv2.png?id=usp-family'
-                },
-              ].map((item, i) => (
-                <AnimatedElement key={i} delay={i * 80}>
-                  <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: i * 0.08 }}
-                    className="group relative h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer min-h-[300px] sm:min-h-[400px]"
-                  >
-                    {/* Large Background Image */}
-                    <motion.div
-                      className="absolute inset-0"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      <Image 
-                        src={item.image} 
-                        alt={item.title} 
-                        className="w-full h-full object-cover"
+                      {/* Content Overlay */}
+                      <div className="relative h-full flex flex-col justify-end p-6 md:p-8 z-10">
+                        {/* Icon with Animation */}
+                        <motion.div
+                          initial={{ scale: 0, opacity: 0 }}
+                          whileInView={{ scale: 1, opacity: 1 }}
+                          transition={{ duration: 0.6, delay: i * 0.08 + 0.2 }}
+                          className="mb-4 w-12 h-12 rounded-full bg-gold-accent/20 flex items-center justify-center group-hover:bg-gold-accent/40 transition-colors duration-300"
+                        >
+                          <div className="text-gold-accent">
+                            {React.cloneElement(item.icon as React.ReactElement, { className: "w-6 h-6 stroke-[1.5]" })}
+                          </div>
+                        </motion.div>
+
+                        {/* Animated Title */}
+                        <motion.h3 
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: i * 0.08 + 0.1 }}
+                          className="font-heading text-2xl md:text-3xl font-bold text-white mb-3 leading-tight line-clamp-2"
+                        >
+                          {item.title}
+                        </motion.h3>
+
+                        {/* Animated Description */}
+                        <motion.p 
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: i * 0.08 + 0.2 }}
+                          className="text-white/90 text-base leading-relaxed line-clamp-2"
+                        >
+                          {item.desc}
+                        </motion.p>
+
+                        {/* Animated Accent Line */}
+                        <motion.div
+                          initial={{ scaleX: 0 }}
+                          whileInView={{ scaleX: 1 }}
+                          transition={{ duration: 0.8, delay: i * 0.08 + 0.3 }}
+                          className="mt-4 h-1 w-12 bg-gold-accent origin-left"
+                        />
+                      </div>
+
+                      {/* Hover Glow Effect */}
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-gold-accent/0 via-gold-accent/10 to-gold-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        whileHover={{ opacity: 0.2 }}
                       />
                     </motion.div>
+                  </AnimatedElement>
+                ))
+              )}
+            </div>
 
-                    {/* Gradient Overlay */}
-                    <motion.div 
-                      className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"
-                      whileHover={{ opacity: 0.95 }}
-                      transition={{ duration: 0.3 }}
-                    />
+            {/* Mobile/Tablet Carousel - Visible only on lg below */}
+            <div className="lg:hidden">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex-1" />
+                <div className="flex gap-2">
+                  <Button variant="outline" size="icon" onClick={prevUSPSlide} className="rounded-full border-primary/30 hover:bg-primary hover:text-white transition-colors h-8 w-8 sm:h-10 sm:w-10">
+                    <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
+                  </Button>
+                  <Button variant="outline" size="icon" onClick={nextUSPSlide} className="rounded-full border-primary/30 hover:bg-primary hover:text-white transition-colors h-8 w-8 sm:h-10 sm:w-10">
+                    <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
+                  </Button>
+                </div>
+              </div>
 
-                    {/* Content Overlay */}
-                    <div className="relative h-full flex flex-col justify-end p-4 sm:p-6 md:p-8 z-10">
-                      {/* Icon with Animation */}
-                      <motion.div
-                        initial={{ scale: 0, opacity: 0 }}
-                        whileInView={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 0.6, delay: i * 0.08 + 0.2 }}
-                        className="mb-3 sm:mb-4 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gold-accent/20 flex items-center justify-center group-hover:bg-gold-accent/40 transition-colors duration-300"
-                      >
-                        <div className="text-gold-accent">
-                          {React.cloneElement(item.icon as React.ReactElement, { className: "w-5 h-5 sm:w-6 sm:h-6 stroke-[1.5]" })}
+              <div className="relative h-80 sm:h-96 w-full rounded-2xl overflow-hidden shadow-2xl">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentUSPSlide}
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -100 }}
+                    transition={{ duration: 0.5 }}
+                    className="absolute inset-0"
+                  >
+                    {projectUSPs.length > 0 ? (
+                      <>
+                        <Image
+                          src={projectUSPs[currentUSPSlide].uspIcon || ''}
+                          alt={projectUSPs[currentUSPSlide].uspText || ''}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+                        <div className="absolute bottom-0 left-0 p-4 sm:p-6 max-w-full">
+                          <motion.h3
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.2 }}
+                            className="font-heading text-xl sm:text-3xl font-bold text-white mb-2 line-clamp-2"
+                          >
+                            {projectUSPs[currentUSPSlide].uspText}
+                          </motion.h3>
+                          <motion.p
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.3 }}
+                            className="text-white/90 text-xs sm:text-base line-clamp-2"
+                          >
+                            {projectUSPs[currentUSPSlide].shortDescription}
+                          </motion.p>
                         </div>
-                      </motion.div>
-
-                      {/* Animated Title */}
-                      <motion.h3 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: i * 0.08 + 0.1 }}
-                        className="font-heading text-lg sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-3 leading-tight line-clamp-2"
-                      >
-                        {item.title}
-                      </motion.h3>
-
-                      {/* Animated Description */}
-                      <motion.p 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: i * 0.08 + 0.2 }}
-                        className="text-white/90 text-xs sm:text-base leading-relaxed line-clamp-2"
-                      >
-                        {item.desc}
-                      </motion.p>
-
-                      {/* Animated Accent Line */}
-                      <motion.div
-                        initial={{ scaleX: 0 }}
-                        whileInView={{ scaleX: 1 }}
-                        transition={{ duration: 0.8, delay: i * 0.08 + 0.3 }}
-                        className="mt-3 sm:mt-4 h-1 w-8 sm:w-12 bg-gold-accent origin-left"
-                      />
-                    </div>
-
-                    {/* Hover Glow Effect */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-gold-accent/0 via-gold-accent/10 to-gold-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      whileHover={{ opacity: 0.2 }}
-                    />
+                      </>
+                    ) : (
+                      // Fallback carousel
+                      <>
+                        <Image
+                          src={[
+                            'https://static.wixstatic.com/media/cef78c_9e93d53231df40feabb3d7106b15637e~mv2.png?id=usp-green',
+                            'https://static.wixstatic.com/media/cef78c_18f05f7fe37d4a04af69d54d4637c019~mv2.png?id=usp-layout',
+                            'https://static.wixstatic.com/media/cef78c_0294cbf2be46425299f4ed4acd1dea82~mv2.png?id=usp-township',
+                            'https://static.wixstatic.com/media/cef78c_18f05f7fe37d4a04af69d54d4637c019~mv2.png?id=usp-plots',
+                            'https://static.wixstatic.com/media/cef78c_4eb8389129164d20ae5f84d56138b12c~mv2.png?id=usp-location',
+                            'https://static.wixstatic.com/media/cef78c_0294cbf2be46425299f4ed4acd1dea82~mv2.png?id=usp-godrej',
+                            'https://static.wixstatic.com/media/cef78c_9e93d53231df40feabb3d7106b15637e~mv2.png?id=usp-rera',
+                            'https://static.wixstatic.com/media/cef78c_18f05f7fe37d4a04af69d54d4637c019~mv2.png?id=usp-growth',
+                            'https://static.wixstatic.com/media/cef78c_0294cbf2be46425299f4ed4acd1dea82~mv2.png?id=usp-family'
+                          ][currentUSPSlide % 9]}
+                          alt="USP"
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+                        <div className="absolute bottom-0 left-0 p-4 sm:p-6 max-w-full">
+                          <motion.h3
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.2 }}
+                            className="font-heading text-xl sm:text-3xl font-bold text-white mb-2 line-clamp-2"
+                          >
+                            {['Resort-style green living', 'Master-planned layout', '43-acre township', '750 exclusive plots', 'Prime connectivity', 'Godrej brand trust', 'RERA-approved', 'Strong appreciation', 'Peaceful family lifestyle'][currentUSPSlide % 9]}
+                          </motion.h3>
+                          <motion.p
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.3 }}
+                            className="text-white/90 text-xs sm:text-base line-clamp-2"
+                          >
+                            {['Lush landscapes and open spaces designed for your wellness', 'Thoughtfully designed community with premium amenities', 'Expansive integrated development with world-class facilities', 'Limited premium inventory with prime locations', 'NH44 GT Road access with excellent regional links', 'Legacy of excellence and premium quality standards', 'Investment security with regulatory compliance', 'Prime location advantage with growth potential', 'Safe and serene environment for your loved ones'][currentUSPSlide % 9]}
+                          </motion.p>
+                        </div>
+                      </>
+                    )}
                   </motion.div>
-                </AnimatedElement>
-              ))
-            )}
+                </AnimatePresence>
+              </div>
+
+              {/* Carousel Indicators */}
+              <div className="flex justify-center gap-2 mt-6">
+                {(projectUSPs.length > 0 ? projectUSPs : Array(9).fill(null)).map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrentUSPSlide(i)}
+                    className={`h-2 rounded-full transition-all ${
+                      i === currentUSPSlide ? 'bg-primary w-8' : 'bg-primary/30 w-2'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
