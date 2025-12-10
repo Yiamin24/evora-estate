@@ -222,42 +222,42 @@ export default function HomePage() {
           ))}
         </div>
 
-        <div className="relative z-20 container mx-auto px-4 sm:px-6 text-center pt-20 sm:pt-32 md:pt-40">
+        <div className="relative z-20 container mx-auto px-4 sm:px-6 text-center pt-8 sm:pt-32 md:pt-40 flex flex-col items-center justify-center h-full">
           <AnimatedElement>
-            <div className="inline-block mb-6 sm:mb-8">
+            <div className="inline-block mb-4 sm:mb-8">
               <Image
                 src="https://static.wixstatic.com/media/cef78c_fe29b21b51734c78b8611d7cdf793bf8~mv2.png?id=godrej-logo"
                 alt="Godrej Evora Estate logo"
-                className="h-16 sm:h-20 md:h-28 w-auto mx-auto"
+                className="h-14 sm:h-20 md:h-28 w-auto mx-auto"
               />
             </div>
           </AnimatedElement>
 
           <AnimatedElement delay={100}>
-            <div className="inline-block mb-4 sm:mb-6 px-3 sm:px-4 py-1 border border-white/30 rounded-full backdrop-blur-sm bg-white/10">
-              <span className="text-white/90 text-xs sm:text-sm tracking-widest uppercase font-medium">RERA Approved: RERA-PKL-1860-2025</span>
+            <div className="inline-block mb-3 sm:mb-6">
+              <span className="text-white/90 text-xs sm:text-sm tracking-widest uppercase font-medium" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 0.7)' }}>RERA Approved: RERA-PKL-1860-2025</span>
             </div>
           </AnimatedElement>
 
           <AnimatedElement delay={300}>
-            <h1 className="font-heading text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-3 sm:mb-4 drop-shadow-2xl tracking-tight leading-tight">
+            <h1 className="font-heading text-3xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-2 sm:mb-4 tracking-tight leading-tight" style={{ textShadow: '0 8px 24px rgba(0, 0, 0, 0.95), 0 4px 8px rgba(0, 0, 0, 0.8)' }}>
               Godrej Evora Estate
             </h1>
           </AnimatedElement>
 
           <AnimatedElement delay={400}>
-            <p className="text-sm sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed font-light px-2" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.6)' }}>
+            <p className="text-xs sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-6 sm:mb-12 leading-relaxed font-light px-2" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.6)' }}>
               Premium Resort-Style Plotted Development in Sector 40, Panipat. <br className="hidden md:block" />
               <span className="text-light-gold font-medium" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 0.7)' }}>Launching at an Exclusive Pre-Launch Price – Limited 5-Day Window</span>
             </p>
           </AnimatedElement>
 
           <AnimatedElement delay={800}>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-2">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center items-center px-2 w-full">
               <Button
                 onClick={scrollToContact}
                 size="lg"
-                className="bg-primary text-white hover:bg-primary/90 px-6 sm:px-10 py-5 sm:py-7 text-sm sm:text-lg rounded-none border border-primary shadow-[0_0_20px_rgba(184,134,11,0.3)] hover:shadow-[0_0_30px_rgba(184,134,11,0.5)] transition-all duration-300 w-full sm:w-auto"
+                className="bg-primary text-white hover:bg-primary/90 px-6 sm:px-10 py-4 sm:py-7 text-xs sm:text-lg rounded-none border border-primary shadow-[0_0_20px_rgba(184,134,11,0.3)] hover:shadow-[0_0_30px_rgba(184,134,11,0.5)] transition-all duration-300 w-full sm:w-auto"
               >
                 Book Pre-Launch Slot
               </Button>
@@ -265,7 +265,7 @@ export default function HomePage() {
                 onClick={() => document.getElementById('highlights')?.scrollIntoView({ behavior: 'smooth' })}
                 size="lg"
                 variant="outline"
-                className="bg-transparent border-white text-white hover:bg-white hover:text-primary px-6 sm:px-10 py-5 sm:py-7 text-sm sm:text-lg rounded-none backdrop-blur-sm transition-all duration-300 w-full sm:w-auto"
+                className="bg-transparent border-white text-white hover:bg-white hover:text-primary px-6 sm:px-10 py-4 sm:py-7 text-xs sm:text-lg rounded-none backdrop-blur-sm transition-all duration-300 w-full sm:w-auto"
               >
                 Get Project Details
               </Button>
@@ -273,8 +273,8 @@ export default function HomePage() {
           </AnimatedElement>
         </div>
 
-        <div className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce text-white/50">
-          <ArrowRight className="rotate-90 w-5 h-5 sm:w-6 sm:h-6" />
+        <div className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce text-white/50">
+          <ArrowRight className="rotate-90 w-4 h-4 sm:w-6 sm:h-6" />
         </div>
       </section>
 
