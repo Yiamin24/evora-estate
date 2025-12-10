@@ -78,7 +78,7 @@ const AnimatedElement: React.FC<AnimatedElementProps> = ({ children, className, 
 };
 
 const SectionDivider = () => (
-  <div className="w-full flex justify-center py-12">
+  <div className="w-full flex justify-center py-8 md:py-12">
     <div className="h-px w-1/2 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
   </div>
 );
@@ -182,7 +182,7 @@ export default function HomePage() {
 
   // --- Render ---
   return (
-    <div className="min-h-screen bg-background font-paragraph text-foreground overflow-x-clip selection:bg-primary/20 selection:text-primary">
+    <div className="min-h-screen bg-background font-paragraph text-foreground overflow-x-hidden selection:bg-primary/20 selection:text-primary">
       <Header />
 
       {/* 1️⃣ HERO SECTION (PARALLAX + LUXURY LOOK) */}
@@ -222,42 +222,42 @@ export default function HomePage() {
           ))}
         </div>
 
-        <div className="relative z-20 container mx-auto px-6 text-center pt-32 md:pt-40">
+        <div className="relative z-20 container mx-auto px-4 sm:px-6 text-center pt-20 sm:pt-32 md:pt-40">
           <AnimatedElement>
-            <div className="inline-block mb-8">
+            <div className="inline-block mb-6 sm:mb-8">
               <Image
                 src="https://static.wixstatic.com/media/cef78c_fe29b21b51734c78b8611d7cdf793bf8~mv2.png?id=godrej-logo"
                 alt="Godrej Evora Estate logo"
-                className="h-20 md:h-28 w-auto mx-auto"
+                className="h-16 sm:h-20 md:h-28 w-auto mx-auto"
               />
             </div>
           </AnimatedElement>
 
           <AnimatedElement delay={100}>
-            <div className="inline-block mb-6 px-4 py-1 border border-white/30 rounded-full backdrop-blur-sm bg-white/10">
-              <span className="text-white/90 text-sm tracking-widest uppercase font-medium">RERA Approved: RERA-PKL-1860-2025</span>
+            <div className="inline-block mb-4 sm:mb-6 px-3 sm:px-4 py-1 border border-white/30 rounded-full backdrop-blur-sm bg-white/10">
+              <span className="text-white/90 text-xs sm:text-sm tracking-widest uppercase font-medium">RERA Approved: RERA-PKL-1860-2025</span>
             </div>
           </AnimatedElement>
 
           <AnimatedElement delay={300}>
-            <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-4 drop-shadow-2xl tracking-tight">
+            <h1 className="font-heading text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-3 sm:mb-4 drop-shadow-2xl tracking-tight leading-tight">
               Godrej Evora Estate
             </h1>
           </AnimatedElement>
 
           <AnimatedElement delay={400}>
-            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-light" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.6)' }}>
+            <p className="text-sm sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed font-light px-2" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.6)' }}>
               Premium Resort-Style Plotted Development in Sector 40, Panipat. <br className="hidden md:block" />
               <span className="text-light-gold font-medium" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 0.7)' }}>Launching at an Exclusive Pre-Launch Price – Limited 5-Day Window</span>
             </p>
           </AnimatedElement>
 
           <AnimatedElement delay={800}>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-2">
               <Button
                 onClick={scrollToContact}
                 size="lg"
-                className="bg-primary text-white hover:bg-primary/90 px-10 py-7 text-lg rounded-none border border-primary shadow-[0_0_20px_rgba(184,134,11,0.3)] hover:shadow-[0_0_30px_rgba(184,134,11,0.5)] transition-all duration-300"
+                className="bg-primary text-white hover:bg-primary/90 px-6 sm:px-10 py-5 sm:py-7 text-sm sm:text-lg rounded-none border border-primary shadow-[0_0_20px_rgba(184,134,11,0.3)] hover:shadow-[0_0_30px_rgba(184,134,11,0.5)] transition-all duration-300 w-full sm:w-auto"
               >
                 Book Pre-Launch Slot
               </Button>
@@ -265,7 +265,7 @@ export default function HomePage() {
                 onClick={() => document.getElementById('highlights')?.scrollIntoView({ behavior: 'smooth' })}
                 size="lg"
                 variant="outline"
-                className="bg-transparent border-white text-white hover:bg-white hover:text-primary px-10 py-7 text-lg rounded-none backdrop-blur-sm transition-all duration-300"
+                className="bg-transparent border-white text-white hover:bg-white hover:text-primary px-6 sm:px-10 py-5 sm:py-7 text-sm sm:text-lg rounded-none backdrop-blur-sm transition-all duration-300 w-full sm:w-auto"
               >
                 Get Project Details
               </Button>
@@ -273,26 +273,26 @@ export default function HomePage() {
           </AnimatedElement>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce text-white/50">
-          <ArrowRight className="rotate-90 w-6 h-6" />
+        <div className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce text-white/50">
+          <ArrowRight className="rotate-90 w-5 h-5 sm:w-6 sm:h-6" />
         </div>
       </section>
 
       {/* 2️⃣ KEY HIGHLIGHTS SECTION (LUXURY IMAGE CARDS WITH ANIMATED OVERLAYS) */}
-      <section id="highlights" className="py-24 md:py-32 bg-white relative">
-        <div className="container mx-auto px-6 max-w-[120rem]">
+      <section id="highlights" className="py-16 md:py-24 lg:py-32 bg-white relative">
+        <div className="container mx-auto px-4 sm:px-6 max-w-[120rem]">
           <AnimatedElement>
-            <div className="text-center mb-16">
-              <h2 className="font-heading text-5xl md:text-6xl font-bold text-primary mb-4">43 Acres Township</h2>
-              <p className="text-lg text-foreground/70 max-w-2xl mx-auto">Expansive integrated living with premium amenities and thoughtfully designed spaces</p>
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="font-heading text-3xl sm:text-5xl md:text-6xl font-bold text-primary mb-3 sm:mb-4">43 Acres Township</h2>
+              <p className="text-sm sm:text-lg text-foreground/70 max-w-2xl mx-auto px-2">Expansive integrated living with premium amenities and thoughtfully designed spaces</p>
             </div>
           </AnimatedElement>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {keyHighlights.length > 0 ? (
               keyHighlights.map((highlight, index) => (
                 <AnimatedElement key={highlight._id} delay={index * 100}>
-                  <div className="group relative h-80 rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 cursor-pointer">
+                  <div className="group relative h-64 sm:h-80 rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 cursor-pointer">
                     {/* Background Image */}
                     {highlight.highlightIcon ? (
                       <Image 
@@ -308,12 +308,12 @@ export default function HomePage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 group-hover:via-black/50 transition-all duration-500" />
                     
                     {/* Content Overlay */}
-                    <div className="absolute inset-0 flex flex-col justify-end p-8">
+                    <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 md:p-8">
                       <motion.h3 
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="font-heading text-3xl md:text-4xl font-bold text-white mb-3"
+                        className="font-heading text-xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-3 line-clamp-2"
                       >
                         {highlight.highlightTitle}
                       </motion.h3>
@@ -321,7 +321,7 @@ export default function HomePage() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-white/90 text-base leading-relaxed"
+                        className="text-white/90 text-xs sm:text-base leading-relaxed line-clamp-2"
                       >
                         {highlight.shortDescription}
                       </motion.p>
@@ -355,7 +355,7 @@ export default function HomePage() {
                   }
                 ].map((item, i) => (
                   <AnimatedElement key={i} delay={i * 100}>
-                    <div className="group relative h-80 rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 cursor-pointer">
+                    <div className="group relative h-64 sm:h-80 rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 cursor-pointer">
                       {/* Background Image */}
                       <Image 
                         src={item.image} 
@@ -367,12 +367,12 @@ export default function HomePage() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 group-hover:via-black/50 transition-all duration-500" />
                       
                       {/* Content Overlay */}
-                      <div className="absolute inset-0 flex flex-col justify-end p-8">
+                      <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 md:p-8">
                         <motion.h3 
                           initial={{ opacity: 0, y: 20 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.6, delay: 0.1 }}
-                          className="font-heading text-3xl md:text-4xl font-bold text-white mb-3"
+                          className="font-heading text-xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-3 line-clamp-2"
                         >
                           {item.title}
                         </motion.h3>
@@ -380,7 +380,7 @@ export default function HomePage() {
                           initial={{ opacity: 0, y: 20 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.6, delay: 0.2 }}
-                          className="text-white/90 text-base leading-relaxed"
+                          className="text-white/90 text-xs sm:text-base leading-relaxed line-clamp-2"
                         >
                           {item.desc}
                         </motion.p>
@@ -397,7 +397,7 @@ export default function HomePage() {
       <SectionDivider />
 
       {/* 3️⃣ PRICING SECTION (COMPARISON + SAVINGS) */}
-      <section id="pricing" className="py-24 bg-gradient-to-b from-white via-light-gold/20 to-white relative overflow-hidden">
+      <section id="pricing" className="py-16 md:py-24 bg-gradient-to-b from-white via-light-gold/20 to-white relative overflow-hidden">
         {/* Background Sparkles */}
         <div className="absolute inset-0 pointer-events-none">
           {[...Array(8)].map((_, i) => (
@@ -413,59 +413,59 @@ export default function HomePage() {
           ))}
         </div>
 
-        <div className="container mx-auto px-6 max-w-[120rem] relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 max-w-[120rem] relative z-10">
           <AnimatedElement>
-            <div className="text-center mb-16">
-              <h2 className="font-heading text-5xl md:text-6xl font-bold text-primary mb-4">Exclusive Pre-Launch Pricing</h2>
-              <p className="text-foreground/60 max-w-2xl mx-auto">Secure your legacy at an unbeatable value. Offer valid for a limited time.</p>
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="font-heading text-3xl sm:text-5xl md:text-6xl font-bold text-primary mb-3 sm:mb-4">Exclusive Pre-Launch Pricing</h2>
+              <p className="text-xs sm:text-base text-foreground/60 max-w-2xl mx-auto px-2">Secure your legacy at an unbeatable value. Offer valid for a limited time.</p>
             </div>
           </AnimatedElement>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto items-center">
             {/* Standard Price Card */}
             <AnimatedElement delay={100}>
-              <div className="bg-white p-10 rounded-2xl border border-gray-200 shadow-sm opacity-80 hover:opacity-100 transition-opacity">
-                <h3 className="font-heading text-3xl text-gray-400 mb-2">Standard Price</h3>
-                <div className="flex items-baseline gap-2 mb-6">
-                  <span className="text-4xl font-bold text-gray-400 line-through decoration-red-400 decoration-2">₹1,50,000</span>
-                  <span className="text-gray-400">/ sq yd</span>
+              <div className="bg-white p-4 sm:p-6 md:p-10 rounded-2xl border border-gray-200 shadow-sm opacity-80 hover:opacity-100 transition-opacity">
+                <h3 className="font-heading text-xl sm:text-3xl text-gray-400 mb-2">Standard Price</h3>
+                <div className="flex flex-wrap items-baseline gap-1 sm:gap-2 mb-4 sm:mb-6">
+                  <span className="text-2xl sm:text-4xl font-bold text-gray-400 line-through decoration-red-400 decoration-2">₹1,50,000</span>
+                  <span className="text-xs sm:text-base text-gray-400">/ sq yd</span>
                 </div>
-                <ul className="space-y-4 text-gray-500">
-                  <li className="flex items-center gap-3"><Clock className="w-5 h-5" /> Post-Launch Pricing</li>
-                  <li className="flex items-center gap-3"><Grid3x3 className="w-5 h-5" /> Standard Inventory Allocation</li>
+                <ul className="space-y-2 sm:space-y-4 text-gray-500 text-xs sm:text-base">
+                  <li className="flex items-center gap-2 sm:gap-3"><Clock className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> <span>Post-Launch Pricing</span></li>
+                  <li className="flex items-center gap-2 sm:gap-3"><Grid3x3 className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> <span>Standard Inventory Allocation</span></li>
                 </ul>
               </div>
             </AnimatedElement>
 
             {/* Pre-Launch Price Card */}
             <AnimatedElement delay={300}>
-              <div className="relative bg-gradient-to-br from-primary to-[#8B6508] p-10 rounded-2xl shadow-2xl text-white transform scale-105 border-2 border-gold-accent/30">
-                <div className="absolute -top-5 right-10 bg-white text-primary px-6 py-2 rounded-full font-bold shadow-lg animate-pulse">
-                  SAVE ₹20,000 / sq yd
+              <div className="relative bg-gradient-to-br from-primary to-[#8B6508] p-4 sm:p-6 md:p-10 rounded-2xl shadow-2xl text-white lg:scale-105 border-2 border-gold-accent/30">
+                <div className="absolute -top-3 sm:-top-4 md:-top-5 right-2 sm:right-4 md:right-10 bg-white text-primary px-2 sm:px-4 md:px-6 py-1 rounded-full font-bold text-xs sm:text-sm shadow-lg animate-pulse whitespace-nowrap">
+                  SAVE ₹20K
                 </div>
-                <h3 className="font-heading text-3xl text-white/90 mb-2">Pre-Launch Offer</h3>
-                <div className="flex items-baseline gap-2 mb-2">
-                  <span className="text-6xl font-bold text-white">₹1,30,000</span>
-                  <span className="text-white/80">/ sq yd</span>
+                <h3 className="font-heading text-xl sm:text-3xl text-white/90 mb-2 mt-6 sm:mt-0">Pre-Launch Offer</h3>
+                <div className="flex flex-wrap items-baseline gap-1 sm:gap-2 mb-2">
+                  <span className="text-3xl sm:text-5xl md:text-6xl font-bold text-white break-words">₹1,30,000</span>
+                  <span className="text-xs sm:text-sm md:text-base text-white/80">/ sq yd</span>
                 </div>
-                <p className="text-gold-accent font-medium mb-8">13.33% Instant Discount</p>
+                <p className="text-gold-accent font-medium mb-4 sm:mb-6 md:mb-8 text-xs sm:text-base">13.33% Instant Discount</p>
 
-                <div className="space-y-4 border-t border-white/20 pt-6 mb-8">
-                  <div className="flex justify-between items-center">
-                    <span className="text-white/80">EOI Amount</span>
-                    <span className="text-2xl font-bold">₹5,00,000</span>
+                <div className="space-y-2 sm:space-y-3 md:space-y-4 border-t border-white/20 pt-3 sm:pt-4 md:pt-6 mb-4 sm:mb-6 md:mb-8">
+                  <div className="flex justify-between items-center flex-wrap gap-1 sm:gap-2">
+                    <span className="text-white/80 text-xs sm:text-base">EOI Amount</span>
+                    <span className="text-base sm:text-2xl font-bold">₹5,00,000</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-white/80">Plot Sizes</span>
-                    <span className="text-xl font-bold">130 – 179 sq yd</span>
+                  <div className="flex justify-between items-center flex-wrap gap-1 sm:gap-2">
+                    <span className="text-white/80 text-xs sm:text-base">Plot Sizes</span>
+                    <span className="text-sm sm:text-xl font-bold">130 – 179 sq yd</span>
                   </div>
                 </div>
 
-                <div className="bg-black/20 rounded-lg p-4 text-center mb-6">
-                  <p className="text-sm text-white/90">Pre-launch pricing valid only till <span className="font-bold text-gold-accent">Dec 20, 2025</span></p>
+                <div className="bg-black/20 rounded-lg p-2 sm:p-3 md:p-4 text-center mb-4 sm:mb-6">
+                  <p className="text-xs sm:text-sm text-white/90">Pre-launch pricing valid only till <span className="font-bold text-gold-accent">Dec 20, 2025</span></p>
                 </div>
 
-                <Button onClick={scrollToContact} className="w-full bg-white text-primary hover:bg-gray-100 font-bold py-6 text-lg">
+                <Button onClick={scrollToContact} className="w-full bg-white text-primary hover:bg-gray-100 font-bold py-3 sm:py-4 md:py-6 text-xs sm:text-lg">
                   Lock This Price Now
                 </Button>
               </div>
@@ -475,26 +475,26 @@ export default function HomePage() {
       </section>
 
       {/* 4️⃣ LIFESTYLE / GALLERY SECTION */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="container mx-auto px-6 max-w-[120rem]">
+      <section className="py-16 md:py-24 bg-white overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 max-w-[120rem]">
           <AnimatedElement>
-            <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 md:gap-0 mb-8 md:mb-12">
               <div className="max-w-2xl">
-                <h2 className="font-heading text-5xl md:text-6xl font-bold text-primary mb-4">Experience Resort-Style Living</h2>
-                <p className="text-lg text-foreground/70">Green open spaces, peaceful landscapes, and thoughtfully designed neighbourhoods.</p>
+                <h2 className="font-heading text-3xl sm:text-5xl md:text-6xl font-bold text-primary mb-2 sm:mb-4">Experience Resort-Style Living</h2>
+                <p className="text-sm sm:text-lg text-foreground/70">Green open spaces, peaceful landscapes, and thoughtfully designed neighbourhoods.</p>
               </div>
-              <div className="flex gap-4 mt-6 md:mt-0">
-                <Button variant="outline" size="icon" onClick={prevSlide} className="rounded-full border-primary/30 hover:bg-primary hover:text-white transition-colors">
-                  <ChevronLeft className="w-6 h-6" />
+              <div className="flex gap-2 sm:gap-4">
+                <Button variant="outline" size="icon" onClick={prevSlide} className="rounded-full border-primary/30 hover:bg-primary hover:text-white transition-colors h-8 w-8 sm:h-10 sm:w-10">
+                  <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
                 </Button>
-                <Button variant="outline" size="icon" onClick={nextSlide} className="rounded-full border-primary/30 hover:bg-primary hover:text-white transition-colors">
-                  <ChevronRight className="w-6 h-6" />
+                <Button variant="outline" size="icon" onClick={nextSlide} className="rounded-full border-primary/30 hover:bg-primary hover:text-white transition-colors h-8 w-8 sm:h-10 sm:w-10">
+                  <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
                 </Button>
               </div>
             </div>
           </AnimatedElement>
 
-          <div className="relative h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative h-48 sm:h-96 md:h-[600px] w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
@@ -512,12 +512,12 @@ export default function HomePage() {
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                    <div className="absolute bottom-0 left-0 p-12 max-w-3xl">
+                    <div className="absolute bottom-0 left-0 p-4 sm:p-8 md:p-12 max-w-3xl">
                       <motion.h3
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.3 }}
-                        className="font-heading text-4xl md:text-5xl font-bold text-white mb-4"
+                        className="font-heading text-xl sm:text-4xl md:text-5xl font-bold text-white mb-2 sm:mb-4 line-clamp-2"
                       >
                         {lifestyleGallery[currentSlide].imageTitle}
                       </motion.h3>
@@ -525,7 +525,7 @@ export default function HomePage() {
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.4 }}
-                        className="text-white/90 text-lg"
+                        className="text-white/90 text-xs sm:text-lg line-clamp-2"
                       >
                         {lifestyleGallery[currentSlide].description}
                       </motion.p>
@@ -540,12 +540,12 @@ export default function HomePage() {
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                    <div className="absolute bottom-0 left-0 p-12 max-w-3xl">
+                    <div className="absolute bottom-0 left-0 p-4 sm:p-8 md:p-12 max-w-3xl">
                       <motion.h3
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.3 }}
-                        className="font-heading text-4xl md:text-5xl font-bold text-white mb-4"
+                        className="font-heading text-xl sm:text-4xl md:text-5xl font-bold text-white mb-2 sm:mb-4 line-clamp-2"
                       >
                         {['Green Park Spaces', 'Walking Trails', 'Beautiful Landscapes', 'Aerial Township View', 'Clubhouse Amenities'][currentSlide % 5]}
                       </motion.h3>
@@ -553,7 +553,7 @@ export default function HomePage() {
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.4 }}
-                        className="text-white/90 text-lg"
+                        className="text-white/90 text-xs sm:text-lg line-clamp-2"
                       >
                         {['Lush landscaped gardens for serene mornings.', 'Scenic pathways designed for your daily wellness.', 'Thoughtfully designed zones for community interaction.', 'Master-planned layout integrating nature and luxury.', 'Premium facilities for a resort-like experience.'][currentSlide % 5]}
                       </motion.p>
@@ -567,14 +567,14 @@ export default function HomePage() {
       </section>
 
       {/* 5️⃣ LOCATION ADVANTAGE SECTION */}
-      <section id="location" className="py-24 bg-gradient-to-br from-primary/5 to-gold-accent/5">
-        <div className="container mx-auto px-6 max-w-[120rem]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section id="location" className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-gold-accent/5">
+        <div className="container mx-auto px-4 sm:px-6 max-w-[120rem]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
             <AnimatedElement>
-              <h2 className="font-heading text-5xl md:text-6xl font-bold text-primary mb-8 leading-tight">
+              <h2 className="font-heading text-3xl sm:text-5xl md:text-6xl font-bold text-primary mb-6 md:mb-8 leading-tight">
                 {locationAdvantages?.sectionHeadline || 'A Location That Connects You Everywhere'}
               </h2>
-              <div className="space-y-6">
+              <div className="space-y-3 sm:space-y-6">
                 {(locationAdvantages ? [
                   locationAdvantages.advantage1,
                   locationAdvantages.advantage2,
@@ -588,18 +588,18 @@ export default function HomePage() {
                   "Central Panipat connectivity",
                   "Surrounded by established residential zones"
                 ]).filter(Boolean).map((adv, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm border border-primary/10 hover:border-primary/40 transition-colors">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-5 h-5 text-primary" />
+                  <div key={i} className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-white rounded-xl shadow-sm border border-primary/10 hover:border-primary/40 transition-colors">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                     </div>
-                    <span className="text-lg text-foreground/80 font-medium">{adv}</span>
+                    <span className="text-sm sm:text-lg text-foreground/80 font-medium">{adv}</span>
                   </div>
                 ))}
               </div>
             </AnimatedElement>
 
             <AnimatedElement delay={200}>
-              <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px]">
+              <div className="relative w-full h-64 sm:h-96 md:h-[500px] lg:h-[600px]">
                 <CustomMap />
               </div>
             </AnimatedElement>
@@ -608,15 +608,15 @@ export default function HomePage() {
       </section>
 
       {/* 6️⃣ USPs SECTION - WHY CHOOSE EVORA ESTATE */}
-      <section id="usps" className="py-24 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-6 max-w-[120rem]">
+      <section id="usps" className="py-16 md:py-24 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 max-w-[120rem]">
           <AnimatedElement>
-            <div className="text-center mb-20">
+            <div className="text-center mb-12 md:mb-20">
               <motion.h2 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
-                className="font-heading text-5xl md:text-7xl font-bold text-primary mb-6"
+                className="font-heading text-3xl sm:text-5xl md:text-7xl font-bold text-primary mb-4 md:mb-6"
               >
                 Why Choose Evora Estate
               </motion.h2>
@@ -624,13 +624,13 @@ export default function HomePage() {
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-                className="h-1 w-32 bg-gradient-to-r from-primary via-gold-accent to-primary mx-auto origin-center"
+                className="h-1 w-24 md:w-32 bg-gradient-to-r from-primary via-gold-accent to-primary mx-auto origin-center"
               />
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-lg text-foreground/70 mt-6 max-w-2xl mx-auto"
+                className="text-sm sm:text-lg text-foreground/70 mt-4 md:mt-6 max-w-2xl mx-auto px-2"
               >
                 Discover what makes Evora Estate the premier choice for luxury living
               </motion.p>
@@ -638,7 +638,7 @@ export default function HomePage() {
           </AnimatedElement>
 
           {/* Enhanced Grid with Image-First Design */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {projectUSPs.length > 0 ? (
               projectUSPs.map((usp, i) => (
                 <AnimatedElement key={usp._id} delay={i * 80}>
@@ -646,7 +646,7 @@ export default function HomePage() {
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: i * 0.08 }}
-                    className="group relative h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+                    className="group relative h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer min-h-[300px] sm:min-h-[400px]"
                   >
                     {/* Large Background Image */}
                     {usp.uspIcon ? (
@@ -673,19 +673,19 @@ export default function HomePage() {
                     />
 
                     {/* Content Overlay */}
-                    <div className="relative h-full min-h-[400px] flex flex-col justify-end p-8 z-10">
+                    <div className="relative h-full flex flex-col justify-end p-4 sm:p-6 md:p-8 z-10">
                       {/* Icon with Animation */}
                       <motion.div
                         initial={{ scale: 0, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 0.6, delay: i * 0.08 + 0.2 }}
-                        className="mb-4 w-12 h-12 rounded-full bg-gold-accent/20 flex items-center justify-center group-hover:bg-gold-accent/40 transition-colors duration-300"
+                        className="mb-3 sm:mb-4 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gold-accent/20 flex items-center justify-center group-hover:bg-gold-accent/40 transition-colors duration-300"
                       >
                         <div className="text-gold-accent">
                           {usp.uspIcon ? (
-                            <Star className="w-6 h-6" />
+                            <Star className="w-5 h-5 sm:w-6 sm:h-6" />
                           ) : (
-                            <Star className="w-6 h-6" />
+                            <Star className="w-5 h-5 sm:w-6 sm:h-6" />
                           )}
                         </div>
                       </motion.div>
@@ -695,7 +695,7 @@ export default function HomePage() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: i * 0.08 + 0.1 }}
-                        className="font-heading text-2xl md:text-3xl font-bold text-white mb-3 leading-tight"
+                        className="font-heading text-lg sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-3 leading-tight line-clamp-2"
                       >
                         {usp.uspText}
                       </motion.h3>
@@ -705,7 +705,7 @@ export default function HomePage() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: i * 0.08 + 0.2 }}
-                        className="text-white/90 text-base leading-relaxed"
+                        className="text-white/90 text-xs sm:text-base leading-relaxed line-clamp-2"
                       >
                         {usp.shortDescription}
                       </motion.p>
@@ -715,7 +715,7 @@ export default function HomePage() {
                         initial={{ scaleX: 0 }}
                         whileInView={{ scaleX: 1 }}
                         transition={{ duration: 0.8, delay: i * 0.08 + 0.3 }}
-                        className="mt-4 h-1 w-12 bg-gold-accent origin-left"
+                        className="mt-3 sm:mt-4 h-1 w-8 sm:w-12 bg-gold-accent origin-left"
                       />
                     </div>
 
@@ -790,7 +790,7 @@ export default function HomePage() {
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: i * 0.08 }}
-                    className="group relative h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+                    className="group relative h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer min-h-[300px] sm:min-h-[400px]"
                   >
                     {/* Large Background Image */}
                     <motion.div
@@ -813,16 +813,16 @@ export default function HomePage() {
                     />
 
                     {/* Content Overlay */}
-                    <div className="relative h-full min-h-[400px] flex flex-col justify-end p-8 z-10">
+                    <div className="relative h-full flex flex-col justify-end p-4 sm:p-6 md:p-8 z-10">
                       {/* Icon with Animation */}
                       <motion.div
                         initial={{ scale: 0, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 0.6, delay: i * 0.08 + 0.2 }}
-                        className="mb-4 w-12 h-12 rounded-full bg-gold-accent/20 flex items-center justify-center group-hover:bg-gold-accent/40 transition-colors duration-300"
+                        className="mb-3 sm:mb-4 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gold-accent/20 flex items-center justify-center group-hover:bg-gold-accent/40 transition-colors duration-300"
                       >
                         <div className="text-gold-accent">
-                          {React.cloneElement(item.icon as React.ReactElement, { className: "w-6 h-6 stroke-[1.5]" })}
+                          {React.cloneElement(item.icon as React.ReactElement, { className: "w-5 h-5 sm:w-6 sm:h-6 stroke-[1.5]" })}
                         </div>
                       </motion.div>
 
@@ -831,7 +831,7 @@ export default function HomePage() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: i * 0.08 + 0.1 }}
-                        className="font-heading text-2xl md:text-3xl font-bold text-white mb-3 leading-tight"
+                        className="font-heading text-lg sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-3 leading-tight line-clamp-2"
                       >
                         {item.title}
                       </motion.h3>
@@ -841,7 +841,7 @@ export default function HomePage() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: i * 0.08 + 0.2 }}
-                        className="text-white/90 text-base leading-relaxed"
+                        className="text-white/90 text-xs sm:text-base leading-relaxed line-clamp-2"
                       >
                         {item.desc}
                       </motion.p>
@@ -851,7 +851,7 @@ export default function HomePage() {
                         initial={{ scaleX: 0 }}
                         whileInView={{ scaleX: 1 }}
                         transition={{ duration: 0.8, delay: i * 0.08 + 0.3 }}
-                        className="mt-4 h-1 w-12 bg-gold-accent origin-left"
+                        className="mt-3 sm:mt-4 h-1 w-8 sm:w-12 bg-gold-accent origin-left"
                       />
                     </div>
 
@@ -869,19 +869,19 @@ export default function HomePage() {
       </section>
 
       {/* 7️⃣ PRE-LAUNCH COUNTDOWN SECTION */}
-      <section className="py-24 bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a] text-white relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20" />
-        <div className="container mx-auto px-6 max-w-[120rem] relative z-10 text-center">
+        <div className="container mx-auto px-4 sm:px-6 max-w-[120rem] relative z-10 text-center">
           <AnimatedElement>
-            <h2 className="font-heading text-5xl md:text-7xl font-bold text-gold-accent mb-4">Pre-Launch Ends Soon</h2>
-            <p className="text-xl text-white/80 mb-12">December 15–20, 2025 | Limited 5-day opportunity</p>
+            <h2 className="font-heading text-3xl sm:text-5xl md:text-7xl font-bold text-gold-accent mb-2 sm:mb-4">Pre-Launch Ends Soon</h2>
+            <p className="text-sm sm:text-xl text-white/80 mb-8 md:mb-12">December 15–20, 2025 | Limited 5-day opportunity</p>
           </AnimatedElement>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 max-w-4xl mx-auto mb-8 md:mb-12">
             {Object.entries(timeLeft).map(([unit, value], i) => (
               <AnimatedElement key={unit} delay={i * 100}>
-                <div className="bg-white/5 backdrop-blur-md border border-gold-accent/30 rounded-2xl p-6">
-                  <div className="font-heading text-5xl md:text-6xl font-bold text-white mb-2 tabular-nums">
+                <div className="bg-white/5 backdrop-blur-md border border-gold-accent/30 rounded-2xl p-3 sm:p-6">
+                  <div className="font-heading text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-1 sm:mb-2 tabular-nums">
                     {String(value).padStart(2, '0')}
                   </div>
                   <div className="text-xs md:text-sm uppercase tracking-widest text-gold-accent">{unit}</div>
@@ -891,7 +891,7 @@ export default function HomePage() {
           </div>
 
           <AnimatedElement delay={400}>
-            <Button onClick={scrollToContact} size="lg" className="bg-gold-accent text-black hover:bg-white px-12 py-6 text-lg font-bold rounded-full shadow-[0_0_20px_rgba(255,215,0,0.4)] hover:shadow-[0_0_40px_rgba(255,215,0,0.6)] transition-all">
+            <Button onClick={scrollToContact} size="lg" className="bg-gold-accent text-black hover:bg-white px-6 sm:px-12 py-4 sm:py-6 text-sm sm:text-lg font-bold rounded-full shadow-[0_0_20px_rgba(255,215,0,0.4)] hover:shadow-[0_0_40px_rgba(255,215,0,0.6)] transition-all">
               Register Interest Now
             </Button>
           </AnimatedElement>
@@ -899,32 +899,32 @@ export default function HomePage() {
       </section>
 
       {/* 8️⃣ ABOUT DEVELOPER & CHANNEL PARTNER */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6 max-w-[120rem]">
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 max-w-[120rem]">
           <AnimatedElement>
-            <div className="text-center mb-16">
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-primary mb-4">Trusted Partners</h2>
-              <div className="h-1 w-24 bg-primary mx-auto" />
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="font-heading text-2xl sm:text-4xl md:text-5xl font-bold text-primary mb-3 sm:mb-4">Trusted Partners</h2>
+              <div className="h-1 w-16 md:w-24 bg-primary mx-auto" />
             </div>
           </AnimatedElement>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 max-w-5xl mx-auto">
             {/* Godrej */}
             <AnimatedElement delay={100}>
-              <div className="p-10 bg-background rounded-2xl border border-primary/10 text-center h-full hover:shadow-xl transition-shadow">
-                <h3 className="font-heading text-3xl font-bold text-primary mb-2">Godrej Properties</h3>
-                <p className="text-sm uppercase tracking-widest text-foreground/50 mb-6">Developer</p>
-                <ul className="text-left space-y-4">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+              <div className="p-6 sm:p-8 md:p-10 bg-background rounded-2xl border border-primary/10 text-center h-full hover:shadow-xl transition-shadow">
+                <h3 className="font-heading text-2xl sm:text-3xl font-bold text-primary mb-2">Godrej Properties</h3>
+                <p className="text-xs sm:text-sm uppercase tracking-widest text-foreground/50 mb-4 sm:mb-6">Developer</p>
+                <ul className="text-left space-y-2 sm:space-y-4 text-xs sm:text-base">
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-foreground/80">Trusted national developer with decades of excellence</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-foreground/80">Award-winning planning & sustainable design practices</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-foreground/80">Strong track record in premium plotted developments</span>
                   </li>
                 </ul>
@@ -933,20 +933,20 @@ export default function HomePage() {
 
             {/* Realty X */}
             <AnimatedElement delay={200}>
-              <div className="p-10 bg-background rounded-2xl border border-primary/10 text-center h-full hover:shadow-xl transition-shadow">
-                <h3 className="font-heading text-3xl font-bold text-primary mb-2">Realty X</h3>
-                <p className="text-sm uppercase tracking-widest text-foreground/50 mb-6">Exclusive Channel Partner</p>
-                <ul className="text-left space-y-4">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+              <div className="p-6 sm:p-8 md:p-10 bg-background rounded-2xl border border-primary/10 text-center h-full hover:shadow-xl transition-shadow">
+                <h3 className="font-heading text-2xl sm:text-3xl font-bold text-primary mb-2">Realty X</h3>
+                <p className="text-xs sm:text-sm uppercase tracking-widest text-foreground/50 mb-4 sm:mb-6">Exclusive Channel Partner</p>
+                <ul className="text-left space-y-2 sm:space-y-4 text-xs sm:text-base">
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-foreground/80">Exclusive pre-launch partner for Evora Estate</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-foreground/80">Known for premium project curation and client service</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-foreground/80">Trusted by investors & families across the region</span>
                   </li>
                 </ul>
@@ -957,55 +957,55 @@ export default function HomePage() {
       </section>
 
       {/* 9️⃣ LEAD FORM SECTION */}
-      <section id="contact" className="py-24 bg-gradient-to-b from-white to-light-gold/30 relative">
-        <div className="container mx-auto px-6 max-w-[120rem] relative z-10">
-          <div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border border-primary/20">
-            <div className="bg-primary p-8 text-center">
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-2">Get Pre-Launch Access</h2>
-              <p className="text-white/90">Limited slots | Best pricing guaranteed</p>
+      <section id="contact" className="py-16 md:py-24 bg-gradient-to-b from-white to-light-gold/30 relative">
+        <div className="container mx-auto px-4 sm:px-6 max-w-[120rem] relative z-10">
+          <div className="max-w-3xl mx-auto bg-white rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden border border-primary/20">
+            <div className="bg-primary p-6 sm:p-8 text-center">
+              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">Get Pre-Launch Access</h2>
+              <p className="text-white/90 text-xs sm:text-base">Limited slots | Best pricing guaranteed</p>
             </div>
-            <div className="p-8 md:p-12">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground/70">Full Name</label>
+            <div className="p-4 sm:p-8 md:p-12">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                  <div className="space-y-1 sm:space-y-2">
+                    <label className="text-xs sm:text-sm font-medium text-foreground/70">Full Name</label>
                     <Input
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="border-primary/20 focus:border-primary h-12"
+                      className="border-primary/20 focus:border-primary h-10 sm:h-12 text-sm"
                       placeholder="John Doe"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground/70">Phone Number</label>
+                  <div className="space-y-1 sm:space-y-2">
+                    <label className="text-xs sm:text-sm font-medium text-foreground/70">Phone Number</label>
                     <Input
                       required
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="border-primary/20 focus:border-primary h-12"
+                      className="border-primary/20 focus:border-primary h-10 sm:h-12 text-sm"
                       placeholder="+91 98765 43210"
                     />
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-foreground/70">Email Address</label>
+                <div className="space-y-1 sm:space-y-2">
+                  <label className="text-xs sm:text-sm font-medium text-foreground/70">Email Address</label>
                   <Input
                     required
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="border-primary/20 focus:border-primary h-12"
+                    className="border-primary/20 focus:border-primary h-10 sm:h-12 text-sm"
                     placeholder="john@example.com"
                   />
                 </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-foreground/70">Message</label>
+                <div className="space-y-1 sm:space-y-2">
+                  <label className="text-xs sm:text-sm font-medium text-foreground/70">Message</label>
                   <Textarea
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="border-primary/20 focus:border-primary min-h-[120px]"
+                    className="border-primary/20 focus:border-primary min-h-[100px] sm:min-h-[120px] text-sm"
                     placeholder="I am interested in..."
                   />
                 </div>
@@ -1016,11 +1016,11 @@ export default function HomePage() {
                     onCheckedChange={(checked) => setFormData({ ...formData, whatsapp: checked as boolean })}
                     className="border-primary data-[state=checked]:bg-primary"
                   />
-                  <label htmlFor="whatsapp" className="text-sm text-foreground/70 cursor-pointer select-none">
+                  <label htmlFor="whatsapp" className="text-xs sm:text-sm text-foreground/70 cursor-pointer select-none">
                     Send me updates on WhatsApp
                   </label>
                 </div>
-                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-6 text-lg shadow-lg hover:shadow-xl transition-all">
+                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 sm:py-6 text-sm sm:text-lg shadow-lg hover:shadow-xl transition-all">
                   Request a Call Back
                 </Button>
               </form>
