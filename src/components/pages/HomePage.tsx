@@ -222,7 +222,7 @@ export default function HomePage() {
           ))}
         </div>
 
-        <div className="relative z-20 container mx-auto px-6 text-center">
+        <div className="relative z-20 container mx-auto px-6 text-center pt-32 md:pt-40">
           <AnimatedElement>
             <div className="inline-block mb-8">
               <Image
